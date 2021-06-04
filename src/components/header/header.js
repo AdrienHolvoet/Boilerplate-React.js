@@ -37,27 +37,32 @@ const Header = ({
       )}
       {srcImg && <img className={classNameImg} src={srcImg}></img>}
       <h1 className="header-title">{title}</h1>
-      {showLoggedUser && (
-        <div className="header-logged-user" ref={ref} onClick={handleClick}>
-          {user && user.username && user.username.substring(0, 2)}
-          <Overlay
-            show={show}
-            arrowProps={null}
-            target={target}
-            placement="bottom"
-            container={ref.current}
-            onHide={() => setShow(false)}
-            rootClose={true}
-            transition={false}
-          >
-            <Popover id="popover-contained">
-              <Popover.Content onClick={logOffUser}>
-                Se déconnecter
-              </Popover.Content>
-            </Popover>
-          </Overlay>
-        </div>
-      )}
+      {showLoggedUser &&
+        (user ? (
+          <div className="header-logged-user" ref={ref} onClick={handleClick}>
+            {user && user.username && user.username.substring(0, 2)}
+            <Overlay
+              show={show}
+              arrowProps={null}
+              target={target}
+              placement="bottom"
+              container={ref.current}
+              onHide={() => setShow(false)}
+              rootClose={true}
+              transition={false}
+            >
+              <Popover id="popover-contained">
+                <Popover.Content onClick={logOffUser}>
+                  Se déconnecter
+                </Popover.Content>
+              </Popover>
+            </Overlay>
+          </div>
+        ) : (
+          <div className="header-log-in">
+            <Link to="/login">se connecter</Link>
+          </div>
+        ))}
     </header>
   );
 };

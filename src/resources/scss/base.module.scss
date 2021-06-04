@@ -1,25 +1,25 @@
-@import 'breakpoint-sass';
+@import "breakpoint-sass";
 
 @font-face {
-  font-family: 'Boston';
-  src: url('../fonts/Boston-Regular.woff2') format('woff2'),
-    url('../fonts/Boston-Regular.woff') format('woff');
+  font-family: "Boston";
+  src: url("../fonts/Boston-Regular.woff2") format("woff2"),
+    url("../fonts/Boston-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'BostonHeavy';
-  src: url('../fonts/Boston-Heavy.woff2') format('woff2'),
-    url('../fonts/Boston-Heavy.woff') format('woff');
+  font-family: "BostonHeavy";
+  src: url("../fonts/Boston-Heavy.woff2") format("woff2"),
+    url("../fonts/Boston-Heavy.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
 
-$background-color: #f1f1f1;
-$font-family: 'Boston';
-$font-family-heavy: 'BostonHeavy';
-$theme-color-primary: #ffcb33;
+$background-color: #cccccc31;
+$font-family: "Boston";
+$font-family-heavy: "BostonHeavy";
+$theme-color-primary: #fcd78f;
 $theme-color-primary-dark: darken($theme-color-primary, 10%);
 $theme-color-primary-light: lighten($theme-color-primary, 10%);
 $theme-color-secondary: #000;
@@ -31,7 +31,7 @@ $theme-color-danger: #da0000;
 $error-background-color: #ffdbd9;
 $error-color: #f44336;
 $warning-color: #757575;
-$success-color :#4BB543;
+$success-color: #4bb543;
 $header-heigth: 70px;
 
 @mixin breakpoint($point: tablet) {

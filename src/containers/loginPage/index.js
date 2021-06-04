@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 import Header from "../../components/header/header";
 import PrimaryButton from "../../components/inputs/primaryButton";
 import "./login.scss";
-import logo from "../../resources/images/logo_black.svg";
+import logo from "../../resources/images/logo.svg";
 import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import authenticationService from "../../services/authenticationService/authenticationService";
@@ -52,8 +52,9 @@ function Login(props) {
   return (
     <>
       <Header title="Connexion" showLoggedUser={false}></Header>
-      <img className="login-logo" src={logo} alt="AIManager" />
-      <div className="login-container">
+      <section className="login-container">
+        <img className="login-logo" src={logo} alt="logo" />
+
         <Form
           onSubmit={handleSubmit(onSubmit)}
           className="login-form d-flex flex-column align-items-center w-100"
@@ -89,7 +90,7 @@ function Login(props) {
             Pas encore inscrit? <Link to="/registration"> S'INSCRIRE</Link>
           </span>
         </Form>
-      </div>
+      </section>
     </>
   );
 }

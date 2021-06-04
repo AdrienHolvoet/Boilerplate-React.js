@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Getting Started with BoilerPlate-React.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple Boilerplate for React.js with a simple architecture, sass, breakpoint sass, prettier, ESLINT,  prettier ESLINT, login/inscription page with jwt token, React Hook Form, React Router, Boostrap v4.6, moment.js, .
+There is also a simple architecture for the https call.
+
+TODO : 
+- i18n,
+- sideBar menu
+- facebook and google auth
 
 ## TO INSTALL 
 

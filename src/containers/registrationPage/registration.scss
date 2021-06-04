@@ -1,10 +1,10 @@
-@import '../../resources/scss/base.module.scss';
+@import "../../resources/scss/base.module.scss";
 
 .registration-container {
   display: flex;
-  height: 90vh;
+  flex-direction: column;
+  height: 100%;
   justify-content: center;
-  align-items: center;
 
   .form-group {
     display: flex;
@@ -13,22 +13,20 @@
 }
 
 .registration-logo {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  top: 20%;
-  margin-right: auto;
-  width: 320px;
-  top: 95px;
+  display: block;
+  margin: 0 auto;
+  width: 160px;
+  height: 30%;
 
-  @include breakpoint {
-    top: 20%;
+  @include breakpoint(desktop) {
+    width: 320px;
   }
 }
 
 .registration-form {
   max-width: 1400px;
+  margin: 0 auto;
+  height: 70%;
 }
 
 .registration-input {

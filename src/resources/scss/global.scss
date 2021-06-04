@@ -1,7 +1,7 @@
-@import './base.module.scss';
-@import 'alertifyjs/build/css/alertify.css';
-@import '~bootstrap/scss/bootstrap';
-@import './alertify.scss';
+@import "./base.module.scss";
+@import "alertifyjs/build/css/alertify.css";
+@import "~bootstrap/scss/bootstrap";
+@import "./alertify.scss";
 
 body {
   margin: 0;
@@ -13,7 +13,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -23,7 +23,6 @@ code {
 
 #root {
   height: 100%;
-  overflow-y: none;
   overflow-x: hidden;
 }
 
@@ -73,7 +72,7 @@ hr {
   color: $theme-color-black;
 }
 
-input[type='radio']:checked:after {
+input[type="radio"]:checked:after {
   width: 16px;
   height: 16px;
   border-radius: 16px;
@@ -81,7 +80,7 @@ input[type='radio']:checked:after {
   left: -1px;
   position: relative;
   background-color: $theme-color-primary;
-  content: '';
+  content: "";
   display: inline-block;
   visibility: visible;
   border: 2px solid $theme-color-white;
@@ -107,26 +106,25 @@ input[type='radio']:checked:after {
   }
 }
 
-input[type=range] {
+input[type="range"] {
   width: 100%;
   height: 6px;
   margin: 13.8px 0;
   background-color: transparent;
   -webkit-appearance: none;
   border-radius: 5px;
-  
 }
-input[type=range]:focus {
+input[type="range"]:focus {
   outline: none;
 }
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
   background: transparent;
   border-radius: 1.3px;
   width: 100%;
   height: 8.4px;
   cursor: pointer;
 }
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   margin-top: -14px;
   width: 16px;
   height: 36px;
@@ -136,10 +134,10 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
   -webkit-appearance: none;
 }
-input[type=range]:focus::-webkit-slider-runnable-track {
+input[type="range"]:focus::-webkit-slider-runnable-track {
   background: transparent;
 }
-input[type=range]::-moz-range-track {
+input[type="range"]::-moz-range-track {
   background: transparent;
   border: 0.2px solid #010101;
   border-radius: 1.3px;
@@ -147,7 +145,7 @@ input[type=range]::-moz-range-track {
   height: 8.4px;
   cursor: pointer;
 }
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
   width: 16px;
   height: 36px;
   background: $theme-color-primary;
@@ -155,7 +153,7 @@ input[type=range]::-moz-range-thumb {
   border-radius: 3px;
   cursor: pointer;
 }
-input[type=range]::-ms-track {
+input[type="range"]::-ms-track {
   background: transparent;
   border-color: transparent;
   border-width: 14.8px 0;
@@ -164,15 +162,15 @@ input[type=range]::-ms-track {
   height: 8.4px;
   cursor: pointer;
 }
-input[type=range]::-ms-fill-lower {
+input[type="range"]::-ms-fill-lower {
   background: transparent;
   border-radius: 2.6px;
 }
-input[type=range]::-ms-fill-upper {
+input[type="range"]::-ms-fill-upper {
   background: transparent;
   border-radius: 2.6px;
 }
-input[type=range]::-ms-thumb {
+input[type="range"]::-ms-thumb {
   width: 16px;
   height: 36px;
   background: $theme-color-primary;
@@ -182,5 +180,11 @@ input[type=range]::-ms-thumb {
   margin-top: 0px;
 }
 
+a {
+  color: unset;
+}
 
-
+a:hover {
+  color: unset;
+  text-decoration: none;
+}
