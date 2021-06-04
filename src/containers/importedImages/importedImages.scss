@@ -1,0 +1,53 @@
+@import '../../resources/scss/base.module.scss';
+
+.imported_images_container {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .img-imported {
+    width: 45%;
+    margin: 5px;
+    position: relative;
+
+    @include breakpoint() {
+      width: 40%;
+    }
+
+    @include breakpoint(desktop) {
+      width: 32%;
+    }
+  }
+  .select-checkbox {
+    position: absolute;
+    z-index: 1;
+    top: 15%;
+    left: 15%;
+
+    .checkmark {
+      @include breakpoint(desktop) {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .checkmark:after {
+      @include breakpoint(desktop) {
+        left: 16px;
+        top: 3px;
+        width: 15px;
+        height: 33px;
+        border-width: 0 5px 5px 0;
+      }
+    }
+  }
+
+  .img-checkbox {
+    width: 100%;
+  }
+
+  .img-checkbox_opacity {
+    opacity: 0.8;
+  }
+}

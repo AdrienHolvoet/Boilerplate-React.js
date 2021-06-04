@@ -1,0 +1,86 @@
+@import '../../resources/scss/base.module.scss';
+
+.checkpoints-list-container .card-container {
+  text-align: center;
+  height: 50%;
+}
+
+.button-space {
+  margin: 7px;
+}
+
+.import-container {
+  display: flex;
+  justify-content: center;
+  max-width: 1400px;
+  padding: 10%;
+  background-color: $theme-color-white;
+  outline: 2px dashed $theme-color-black;
+  outline-offset: -10px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.is-dragover {
+  outline-offset: -20px;
+  opacity: 0.5;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile-container {
+  font-size: 1.25em;
+  color: $theme-color-black;
+  display: inline-block;
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  padding-top: 15px;
+
+  img {
+    width: 90px;
+    margin-bottom: 4px;
+    margin-right: 9px;
+  }
+
+  b {
+    cursor: pointer; /* "hand" cursor */
+  }
+}
+
+.cards {
+  height: 400px;
+  overflow: hidden;
+  overflow-y: visible;
+  max-width: 1400px;
+  margin: auto;
+  justify-content: center;
+}
+
+.card {
+  margin-left: unset  !important;
+  flex: 0 1 45%  !important;
+  margin: 5px;
+  @include breakpoint {
+    flex: 0 1 30% !important;
+  }
+
+  @include breakpoint(desktop) {
+    flex: 0 1 24% !important;
+  }
+}
+
+.creation-date {
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+  font-size: 12px;
+  font-style: italic;
+}

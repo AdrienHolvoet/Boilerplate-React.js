@@ -1,0 +1,16 @@
+.alertify-notifier .ajs-message {
+  text-align: center;
+  border: solid 1px $theme-color-white;
+  border-radius: 5px;
+  color: $theme-color-white;
+}
+.alertify-notifier .ajs-message.ajs-success {
+  background: $success-color;
+}
+.alertify-notifier .ajs-message.ajs-error {
+  background: $error-color;
+}
+
+.alertify-notifier .ajs-message.ajs-warning {
+  background: $warning-color;
+}

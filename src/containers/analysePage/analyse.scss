@@ -1,0 +1,43 @@
+@import '../../resources/scss/base.module.scss';
+
+.graphics-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint {
+    flex-direction: row;
+  }
+}
+
+.confusion-matrix {
+  width: 100%;
+  background-color: $theme-color-white;
+}
+
+.false-alert-matrix {
+  width: 100%;
+}
+
+.alert-container {
+  max-width: 520px;
+  width: 100%;
+  padding: 25px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.treshold-label {
+  background-color: $theme-color-primary;
+  text-align: center;
+  width: 60px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 3px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+

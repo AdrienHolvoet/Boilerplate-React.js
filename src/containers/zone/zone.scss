@@ -1,0 +1,56 @@
+@import '../../resources/scss/base.module.scss';
+
+.zone_view-page {
+  @include breakpoint(desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3em;
+  }
+}
+.zone_view-container {
+  display: unset;
+  position: relative;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  
+
+  @include breakpoint(desktop) {
+    flex-direction: row;
+    display: flex ;
+    margin-bottom: 6em;
+    margin: unset;
+  }
+  .img-zone {
+    width: 120px;
+  }
+
+  .class-name {
+    padding: 15px;
+    color : $theme-color-black
+  }
+
+  .classname-container {
+    margin: auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    .card:hover {
+      border: 1px solid;
+    }
+  }
+}
+
+.button-change-container {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+
+  @include breakpoint(desktop) {
+    margin-top: 3em;
+  }
+}
+
