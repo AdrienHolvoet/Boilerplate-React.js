@@ -1,12 +1,13 @@
-import "./checkpoint.scss";
+import "./about.scss";
 import Header from "../../components/header/header";
 
-function Checkpoint() {
+function About() {
   return (
-    <>
+    <section className="page">
       <Header title="A propos" />
-    </>
+      <section className="content">La section About</section>
+    </section>
   );
 }
 
-export default Checkpoint;
+export default About;

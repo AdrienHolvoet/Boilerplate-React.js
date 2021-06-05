@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import authenticationService from "../../services/authenticationService/authenticationService";
 import alertify from "alertifyjs";
 import User from "../../contexts/user";
+import ShowSideNavbar from "../../contexts/showSideNavbar";
 import { addItem } from "../../utils/localStorage";
 
 function Login(props) {
@@ -19,9 +20,12 @@ function Login(props) {
   } = useForm();
 
   const { user, setUser } = useContext(User);
+  const { showSideNavbar, setShowSideNavbar } = useContext(ShowSideNavbar);
   const history = useHistory();
 
   useEffect(() => {
+    console.log(showSideNavbar);
+    setShowSideNavbar(false);
     if (user) {
       if (
         props &&
@@ -34,6 +38,9 @@ function Login(props) {
         history.replace("/");
       }
     }
+    return () => {
+      setShowSideNavbar(true);
+    };
   }, [user]);
 
   const onSubmit = (data) => {
@@ -50,9 +57,9 @@ function Login(props) {
   };
 
   return (
-    <>
+    <section className="page">
       <Header title="Connexion" showLoggedUser={false}></Header>
-      <section className="login-container">
+      <div className="login-container">
         <img className="login-logo" src={logo} alt="logo" />
 
         <Form
@@ -90,8 +97,8 @@ function Login(props) {
             Pas encore inscrit? <Link to="/registration"> S'INSCRIRE</Link>
           </span>
         </Form>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 

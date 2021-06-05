@@ -60,7 +60,7 @@ const Header = ({
           </div>
         ) : (
           <div className="header-log-in">
-            <Link to="/login">se connecter</Link>
+            <Link to="/login">Connexion</Link>
           </div>
         ))}
     </header>

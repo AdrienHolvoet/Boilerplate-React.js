@@ -8,6 +8,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import registerService from "../../services/registerService/registerService";
 import alertify from "alertifyjs";
+import ShowSideNavbar from "../../contexts/showSideNavbar";
 import User from "../../contexts/user";
 
 function Registration() {
@@ -18,13 +19,18 @@ function Registration() {
   } = useForm();
 
   const { user } = useContext(User);
+  const { setShowSideNavbar } = useContext(ShowSideNavbar);
 
   const history = useHistory();
 
   useEffect(() => {
+    setShowSideNavbar(false);
     if (user) {
       history.replace("/");
     }
+    return () => {
+      setShowSideNavbar(true);
+    };
   }, [user]);
 
   const onSubmit = (data) => {
@@ -41,9 +47,9 @@ function Registration() {
   };
 
   return (
-    <>
+    <section className="page">
       <Header title="Inscription" showLoggedUser={false}></Header>
-      <section className="registration-container">
+      <div className="registration-container">
         <img className="registration-logo" src={logo} alt="logo" />
 
         <Form
@@ -166,8 +172,8 @@ function Registration() {
             <Link to="/login"> Aller à connexion</Link>
           </span>
         </Form>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 

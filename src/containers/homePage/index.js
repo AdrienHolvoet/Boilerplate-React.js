@@ -5,9 +5,10 @@ import React from "react";
 
 function Home() {
   return (
-    <>
+    <section className="page">
       <Header title="Accueil" />
-    </>
+      <div className="content">Section acceuil</div>
+    </section>
   );
 }
 

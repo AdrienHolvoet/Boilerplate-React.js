@@ -65,13 +65,24 @@
   cursor: pointer;
   position: absolute;
   right: 5px;
+  padding: 7px;
+  border-radius: 10px;
+  background-color: $theme-color-primary;
+  color: $theme-color-white;
+  font-weight: 600;
 }
+
+.header-log-in:hover {
+  transform: scale(1.1);
+}
+
 h1 {
   margin: 0;
 }
 
 .primary-button {
   background-color: $theme-color-primary;
+  color: $theme-color-white;
   border: none;
   text-transform: uppercase;
   font-size: 11px;
@@ -81,7 +92,7 @@ h1 {
 }
 
 .secondary-button {
-  background-color: $theme-color-white;
+  background-color: $theme-color-secondary;
   border: 1px solid $theme-color-black;
   padding: 10px;
   text-transform: uppercase;
@@ -162,9 +173,42 @@ h1 {
   top: 4px;
   width: 7px;
   height: 12px;
-  border: solid white;
+  border: solid $theme-color-white;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.sidenavbar {
+  width: 25%;
+  height: 100%;
+  background-color: $theme-color-white;
+  font-weight: bold;
+
+  .header {
+    cursor: pointer;
+  }
+
+  .sidenavbar-container {
+    border-top: 3px solid $background-color;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .active {
+    background-color: $theme-color-primary;
+    color: $theme-color-white;
+  }
+
+  .sidenavbar-item {
+    margin: 6px;
+    padding: 9px;
+    border-radius: 5px;
+  }
+
+  .sidenavbar-item:hover {
+    color: $theme-color-black;
+    background-color: $background-color;
+  }
 }

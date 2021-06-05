@@ -1,3 +1,13 @@
-.not-found {
-  height: 90vh
+@import "../../resources/scss/base.module.scss";
+
+.not_found-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    text-decoration: underline;
+    color: $theme-color-primary;
+  }
 }
