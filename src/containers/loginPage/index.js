@@ -62,7 +62,7 @@ function Login(props) {
         showLoggedUser={false}
         showMenu={false}
       ></Header>
-      <div className="login-container">
+      <div className="content login-container">
         <img className="login-logo" src={logo} alt="logo" />
 
         <Form

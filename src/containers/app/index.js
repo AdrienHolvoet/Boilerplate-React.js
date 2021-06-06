@@ -33,12 +33,14 @@ function App() {
       sidenavbar.style.width = 0;
       overlay.style.display = "none";
     };
-    if (isTablet) {
-      document.addEventListener("mousedown", listener);
-      sidenavbar.style.width = 0;
-    } else {
-      sidenavbar.style.width = "25%";
-      document.removeEventListener("mousedown", listener);
+    if (showSideNavbar) {
+      if (isTablet) {
+        document.addEventListener("mousedown", listener);
+        sidenavbar.style.width = 0;
+      } else {
+        sidenavbar.style.width = "25%";
+        document.removeEventListener("mousedown", listener);
+      }
     }
 
     return () => {

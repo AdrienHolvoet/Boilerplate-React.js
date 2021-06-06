@@ -53,7 +53,7 @@ function Registration() {
         showLoggedUser={false}
         showMenu={false}
       ></Header>
-      <div className="registration-container">
+      <div className="content registration-container">
         <img className="registration-logo" src={logo} alt="logo" />
 
         <Form

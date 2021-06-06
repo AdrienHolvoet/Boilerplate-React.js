@@ -7,7 +7,7 @@ const SideNavbar = ({ routes, refSidebar }) => {
   const isTablet = useMediaQuery({
     query: "(max-width: 768px)",
   });
-  const onClickNavLink = () => {
+  const onClickLink = () => {
     if (isTablet) {
       sidenavbar.style.width = 0;
       overlay.style.display = "none";
@@ -16,7 +16,7 @@ const SideNavbar = ({ routes, refSidebar }) => {
   return (
     <section ref={refSidebar} id="sidenavbar" className="sidenavbar">
       <header className="nav-header">
-        <Link to="/">
+        <Link to="/" onClick={onClickLink}>
           <img src={logo} alt="logo" />
         </Link>
       </header>
@@ -27,7 +27,7 @@ const SideNavbar = ({ routes, refSidebar }) => {
             className="sidenavbar-item"
             exact
             to={route.url}
-            onClick={onClickNavLink}
+            onClick={onClickLink}
           >
             {route.name}
           </NavLink>
