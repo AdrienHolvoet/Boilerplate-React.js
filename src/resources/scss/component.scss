@@ -8,6 +8,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
 
   .back_arrow {
     position: absolute;
@@ -204,11 +207,16 @@ h1 {
   @include breakpoint {
     display: unset;
     width: 25%;
-    position: relative;
+    position: sticky;
+    top: 0;
   }
 
-  .header {
+  .nav-header {
     cursor: pointer;
+    height: $header-heigth;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .sidenavbar-container {

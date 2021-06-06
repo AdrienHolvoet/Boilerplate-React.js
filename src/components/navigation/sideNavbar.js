@@ -15,7 +15,7 @@ const SideNavbar = ({ routes, refSidebar }) => {
   };
   return (
     <section ref={refSidebar} id="sidenavbar" className="sidenavbar">
-      <header className="header">
+      <header className="nav-header">
         <Link to="/">
           <img src={logo} alt="logo" />
         </Link>

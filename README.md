@@ -5,7 +5,6 @@ There is also a simple architecture for the https call.
 
 TODO : 
 - i18n,
-- sideBar menu
 - facebook and google auth
 
 ## TO INSTALL 
