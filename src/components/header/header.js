@@ -4,6 +4,7 @@ import { useContext, useState, useRef } from "react";
 import { Popover, Overlay } from "react-bootstrap";
 import { removeItem } from "../../utils/localStorage";
 import return_arrow from "../../resources/images/arrow_back_black_24dp.svg";
+import menu_hamburger from "../../resources/images/menu_hamburger.svg";
 import { Link } from "react-router-dom";
 
 const Header = ({
@@ -11,6 +12,7 @@ const Header = ({
   srcImg,
   classNameImg,
   showLoggedUser = true,
+  showMenu = true,
   returnPath,
 }) => {
   const { user, setUser } = useContext(User);
@@ -28,6 +30,13 @@ const Header = ({
     removeItem("user");
   };
 
+  const showSideNavbar = () => {
+    const sidenavbar = document.getElementById("sidenavbar");
+    sidenavbar.style.width = "50%";
+    const overlay = document.getElementById("overlay");
+    overlay.style.display = "unset";
+  };
+
   return (
     <header className="header">
       {returnPath && (
@@ -35,6 +44,12 @@ const Header = ({
           <img src={return_arrow} alt="back arrow" />
         </Link>
       )}
+      {showMenu && (
+        <div className="menu_hamburger" onClick={showSideNavbar}>
+          <img src={menu_hamburger} alt="Menu" />
+        </div>
+      )}
+
       {srcImg && <img className={classNameImg} src={srcImg}></img>}
       <h1 className="header-title">{title}</h1>
       {showLoggedUser &&

@@ -20,11 +20,10 @@ function Login(props) {
   } = useForm();
 
   const { user, setUser } = useContext(User);
-  const { showSideNavbar, setShowSideNavbar } = useContext(ShowSideNavbar);
+  const { setShowSideNavbar } = useContext(ShowSideNavbar);
   const history = useHistory();
 
   useEffect(() => {
-    console.log(showSideNavbar);
     setShowSideNavbar(false);
     if (user) {
       if (
@@ -58,7 +57,11 @@ function Login(props) {
 
   return (
     <section className="page">
-      <Header title="Connexion" showLoggedUser={false}></Header>
+      <Header
+        title="Connexion"
+        showLoggedUser={false}
+        showMenu={false}
+      ></Header>
       <div className="login-container">
         <img className="login-logo" src={logo} alt="logo" />
 

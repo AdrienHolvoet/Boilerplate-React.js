@@ -48,7 +48,11 @@ function Registration() {
 
   return (
     <section className="page">
-      <Header title="Inscription" showLoggedUser={false}></Header>
+      <Header
+        title="Inscription"
+        showLoggedUser={false}
+        showMenu={false}
+      ></Header>
       <div className="registration-container">
         <img className="registration-logo" src={logo} alt="logo" />
 

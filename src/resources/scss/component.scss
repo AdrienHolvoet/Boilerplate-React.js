@@ -14,6 +14,16 @@
     left: 15px;
     cursor: pointer;
   }
+
+  .menu_hamburger {
+    cursor: pointer;
+    position: absolute;
+    left: 25px;
+    cursor: pointer;
+    @include breakpoint {
+      display: none;
+    }
+  }
 }
 
 .header-title {
@@ -181,10 +191,21 @@ h1 {
 }
 
 .sidenavbar {
-  width: 25%;
   height: 100%;
   background-color: $theme-color-white;
   font-weight: bold;
+  width: 0;
+  z-index: 999;
+  position: absolute;
+  transition: all 0.3s linear;
+  transform-origin: 1px;
+  overflow-x: hidden;
+
+  @include breakpoint {
+    display: unset;
+    width: 25%;
+    position: relative;
+  }
 
   .header {
     cursor: pointer;
