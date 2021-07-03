@@ -1,11 +1,13 @@
 # Getting Started with BoilerPlate-React.js
 
-This is a simple Boilerplate for React.js with a simple architecture, sass, breakpoint sass, prettier, ESLINT,  prettier ESLINT, login/inscription page with jwt token, React Hook Form, React Router, Boostrap v4.6, moment.js, .
-There is also a simple architecture for the https call.
+This is a simple Boilerplate for React.js with a simple architecture, sass, breakpoint sass, prettier, ESLINT,  prettier ESLINT, login/register page with jwt token, React Hook Form, React Router, Boostrap v4.6, moment.js, .
+It's a simple architecture for HTTPS calls
 
 TODO : 
-- i18n,
+- i18n
 - facebook and google auth
+- Use styled components
+- Implement SSR
 
 ## TO INSTALL 
 
