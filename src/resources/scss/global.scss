@@ -3,14 +3,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./alertify.scss";
 
-body {
-  margin: 0;
-  font-family: $font-family !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: $background-color !important;
-  height: 100vh;
-}
 
 .overlay {
   position: fixed; /* Positioning and size */
@@ -23,10 +15,6 @@ body {
   z-index: 2;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 
 .page {
   display: flex;
@@ -34,11 +22,7 @@ code {
   width: 100%;
 }
 
-#root {
-  height: 100%;
-  display: flex;
-  overflow: hidden;
-}
+
 
 hr {
   width: 100%;

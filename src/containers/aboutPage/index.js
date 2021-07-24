@@ -1,5 +1,6 @@
 import "./about.scss";
 import Header from "../../components/header/header";
+import "./style.js";
 
 function About() {
   return (

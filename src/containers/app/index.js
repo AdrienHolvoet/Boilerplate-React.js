@@ -7,6 +7,7 @@ import SideNavbar from "../../components/navigation/sideNavbar";
 import ShowSideNavbar from "../../contexts/showSideNavbar";
 import { NAVIGATION } from "./constants";
 import { useMediaQuery } from "react-responsive";
+import GlobalStyle from "../../styles/bases/global.js";
 
 function App() {
   const [user, setUser] = useState();
@@ -50,6 +51,7 @@ function App() {
 
   return (
     <>
+      <GlobalStyle />
       <ShowSideNavbar.Provider value={{ showSideNavbar, setShowSideNavbar }}>
         <User.Provider value={{ user, setUser }}>
           <Router>

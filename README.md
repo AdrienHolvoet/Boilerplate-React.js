@@ -13,8 +13,11 @@ Extensions VScode :
 ## TODO  
 - i18n
 - facebook and google auth
-- Use styled components
+- Use styled components(remove Scss)
+- change alertify
 - Implement SSR
+- add module to load to have more easy path
+- add Redux
     
 ## Available Scripts
 

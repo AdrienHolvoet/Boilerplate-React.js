@@ -7,7 +7,7 @@ class NotFoundPage extends React.Component {
     return (
       <section className="page">
         <Header title="Erreur" />
-        <div className="not_found-container">
+        <div className="not_found-container content ">
           <div>
             <h1>
               <span className="display-4">Oups</span>, une erreur s'est
