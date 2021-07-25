@@ -12,6 +12,7 @@ import ShowSideNavbar from "../../contexts/showSideNavbar";
 import User from "../../contexts/user";
 import { ContentLayout } from "../../styles/components/contentLayout";
 import { PageLayout } from "../../styles/components/pageLayout";
+import { ErrorMessage } from "../../styles/components/errorMessage";
 
 function Registration() {
   const {
@@ -72,13 +73,13 @@ function Registration() {
                 placeholder="Prénom*"
               />
               {errors?.firstName?.type === "required" && (
-                <div className="error-message">Le prénom est requis</div>
+                <ErrorMessage>Le prénom est requis</ErrorMessage>
               )}
               {errors?.firstName?.type === "pattern" && (
-                <span className="error-message">
+                <ErrorMessage>
                   Le prénom ne peut pas contenir de caractères spéciaux autre
                   que '-' et espace
-                </span>
+                </ErrorMessage>
               )}
             </div>
 
@@ -93,13 +94,13 @@ function Registration() {
                 placeholder="Nom*"
               />
               {errors?.lastname?.type === "required" && (
-                <div className="error-message">Le nom est requis</div>
+                <ErrorMessage>Le nom est requis</ErrorMessage>
               )}
               {errors?.lastname?.type === "pattern" && (
-                <span className="error-message">
+                <ErrorMessage>
                   Le nom ne peut pas contenir de caractères spéciaux autre que
                   '-' et espace
-                </span>
+                </ErrorMessage>
               )}
             </div>
           </div>
@@ -117,22 +118,20 @@ function Registration() {
                 placeholder="Nom d'utilisateur*"
               />
               {errors?.username?.type === "required" && (
-                <div className="error-message">
-                  Le nom d'utilisateur est requis
-                </div>
+                <ErrorMessage>Le nom d'utilisateur est requis</ErrorMessage>
               )}
               {errors?.username?.type === "pattern" && (
-                <div className="error-message">
+                <ErrorMessage>
                   Le nom d'utilisateur ne peut pas contenir de caractères
                   spéciaux autre que ' - ', ' _ ', ' . ' et espace.
-                </div>
+                </ErrorMessage>
               )}
               {(errors?.username?.type === "minLength" ||
                 errors?.username?.type === "maxLength") && (
-                <div className="error-message">
+                <ErrorMessage>
                   Le nom d'utilisateur doit être compris entre 8 et 30
                   caractères
-                </div>
+                </ErrorMessage>
               )}
             </div>
             <div className="registration-input">
@@ -147,15 +146,13 @@ function Registration() {
                 autoComplete="password"
               />
               {errors?.password?.type === "required" && (
-                <span className="error-message">
-                  Le mot de passe est requis
-                </span>
+                <ErrorMessage>Le mot de passe est requis</ErrorMessage>
               )}
               {errors?.password?.type === "pattern" && (
-                <span className="error-message">
+                <ErrorMessage>
                   Le mot de passe doit faire au moins 8 caractères et contenir
                   au moins une majuscule, une minuscule et un chiffre
-                </span>
+                </ErrorMessage>
               )}
             </div>
           </div>
@@ -167,7 +164,7 @@ function Registration() {
               placeholder="Email*"
             />
             {errors?.email?.type === "required" && (
-              <div className="error-message">L'email est requis</div>
+              <ErrorMessage>L'email est requis</ErrorMessage>
             )}
           </div>
           <PrimaryButton className="registration-submit" title="s'inscrire" />

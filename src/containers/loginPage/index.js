@@ -13,6 +13,7 @@ import ShowSideNavbar from "../../contexts/showSideNavbar";
 import { addItem } from "../../utils/localStorage";
 import { ContentLayout } from "../../styles/components/contentLayout";
 import { PageLayout } from "../../styles/components/pageLayout";
+import { ErrorMessage } from "../../styles/components/errorMessage";
 
 function Login(props) {
   const {
@@ -77,9 +78,7 @@ function Login(props) {
               placeholder="Nom d'utilisateur*"
             />
             {errors?.username?.type === "required" && (
-              <div className="error-message">
-                Le nom d'utilisateur est requis
-              </div>
+              <ErrorMessage>Le nom d'utilisateur est requis</ErrorMessage>
             )}
           </div>
           <div className="login-input">
@@ -91,7 +90,7 @@ function Login(props) {
               id="current-password"
             />
             {errors?.password?.type === "required" && (
-              <span className="error-message">Le mot de passe est requis</span>
+              <ErrorMessage>Le mot de passe est requis</ErrorMessage>
             )}
             <Link to="forgot-password">Mot de passe oublié?</Link>
           </div>

@@ -1,4 +1,3 @@
-import "../../resources/scss/component.scss";
 import User from "../../contexts/user";
 import { useContext, useState, useRef } from "react";
 import { Popover, Overlay } from "react-bootstrap";

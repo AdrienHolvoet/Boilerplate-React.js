@@ -12,6 +12,10 @@ const GlobalStyle = createGlobalStyle`
   height : 100vh
 }
 
+hr {
+  width: 100%;
+}
+
 #root {
   height: 100%;
   display: flex;
@@ -59,6 +63,19 @@ code {
 
 .alertify-notifier .ajs-message.ajs-warning {
   background: ${variables.warningColor};
+}
+
+h1 {
+  margin: 0;
+}
+
+a {
+  color: unset;
+}
+
+a:hover {
+  color: unset;
+  text-decoration: none;
 }
 `;
 

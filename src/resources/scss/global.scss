@@ -1,46 +1,6 @@
 @import "./base.module.scss";
-
 @import "~bootstrap/scss/bootstrap";
 
-
-
-.overlay {
-  position: fixed; /* Positioning and size */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 2;
-}
-
-
-hr {
-  width: 100%;
-}
-
-.custom-control-input:checked ~ .custom-control-label::before {
-  border-color: $theme-color-primary;
-  background-color: $theme-color-primary;
-}
-
-.empty-message {
-  font-weight: bold;
-  font-size: 17px;
-  padding: 2%;
-}
-
-.error-message {
-  display: block;
-  padding-top: 5px;
-  padding: 0.25em 0.5em;
-  border-left: 3px solid $error-color;
-  margin-top: 0.25em;
-  background-color: $error-background-color;
-  border-radius: 3px;
-  color: $theme-color-black;
-}
 
 input[type="radio"]:checked:after {
   width: 16px;
@@ -150,11 +110,4 @@ input[type="range"]::-ms-thumb {
   margin-top: 0px;
 }
 
-a {
-  color: unset;
-}
 
-a:hover {
-  color: unset;
-  text-decoration: none;
-}

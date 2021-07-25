@@ -8,6 +8,7 @@ import ShowSideNavbar from "../../contexts/showSideNavbar";
 import { NAVIGATION } from "./constants";
 import { useMediaQuery } from "react-responsive";
 import GlobalStyle from "../../styles/bases/global.js";
+import { Overlay } from "../../styles/components/overlay";
 
 function App() {
   const [user, setUser] = useState();
@@ -55,7 +56,7 @@ function App() {
       <ShowSideNavbar.Provider value={{ showSideNavbar, setShowSideNavbar }}>
         <User.Provider value={{ user, setUser }}>
           <Router>
-            <div className="overlay" id="overlay" />
+            <Overlay id="overlay" />
             {showSideNavbar && (
               <SideNavbar refSidebar={refSidebar} routes={NAVIGATION} />
             )}

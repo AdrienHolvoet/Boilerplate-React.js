@@ -10,6 +10,7 @@ function ConfirmModal({ show, handleClose, handleConfirm, text }) {
     handleConfirm();
     handleClose(false);
   };
+
   return (
     <Modal
       aria-labelledby="contained-modal-title-vcenter"
