@@ -1,7 +1,7 @@
 @import "./base.module.scss";
-@import "alertifyjs/build/css/alertify.css";
+
 @import "~bootstrap/scss/bootstrap";
-@import "./alertify.scss";
+
 
 
 .overlay {
@@ -14,14 +14,6 @@
   display: none;
   z-index: 2;
 }
-
-
-.page {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 
 
 hr {
@@ -37,26 +29,6 @@ hr {
   font-weight: bold;
   font-size: 17px;
   padding: 2%;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: $background-color;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: $theme-color-primary;
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: $theme-color-primary-dark;
 }
 
 .error-message {
@@ -185,10 +157,4 @@ a {
 a:hover {
   color: unset;
   text-decoration: none;
-}
-
-.content {
-  margin-top: $header-heigth;
-  padding: 10px;
-  overflow-y: auto;
 }

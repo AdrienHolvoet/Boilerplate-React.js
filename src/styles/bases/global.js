@@ -1,7 +1,6 @@
-import "./font.js";
-import "./media.js";
 import { variables } from "./variable.js";
 import { createGlobalStyle } from "styled-components";
+import "alertifyjs/build/css/alertify.css";
 
 const GlobalStyle = createGlobalStyle`
  body {
@@ -30,18 +29,36 @@ code {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: $background-color;
+  background: ${variables.backgroundColor};
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $theme-color-primary;
+  background:${variables.themeColorPrimary};
   border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $theme-color-primary-dark;
+  background: ${variables.themeColorPrimaryDark};
+}
+
+
+.alertify-notifier .ajs-message {
+  text-align: center;
+  border: solid 1px ${variables.themeColorWhite};
+  border-radius: 5px;
+  color: ${variables.themeColorWhite};
+}
+.alertify-notifier .ajs-message.ajs-success {
+  background:${variables.successColor};
+}
+.alertify-notifier .ajs-message.ajs-error {
+  background:${variables.errorColor};
+}
+
+.alertify-notifier .ajs-message.ajs-warning {
+  background: ${variables.warningColor};
 }
 `;
 

@@ -11,6 +11,8 @@ import alertify from "alertifyjs";
 import User from "../../contexts/user";
 import ShowSideNavbar from "../../contexts/showSideNavbar";
 import { addItem } from "../../utils/localStorage";
+import { ContentLayout } from "../../styles/components/contentLayout";
+import { PageLayout } from "../../styles/components/pageLayout";
 
 function Login(props) {
   const {
@@ -56,13 +58,11 @@ function Login(props) {
   };
 
   return (
-    <section className="page">
-      <Header
-        title="Connexion"
-        showLoggedUser={false}
-        showMenu={false}
-      ></Header>
-      <div className="content login-container">
+    <PageLayout>
+      <Header showLoggedUser={false} showMenu={false}>
+        Connexion
+      </Header>
+      <ContentLayout className="login-container">
         <img className="login-logo" src={logo} alt="logo" />
 
         <Form
@@ -100,8 +100,8 @@ function Login(props) {
             Pas encore inscrit? <Link to="/registration"> S'INSCRIRE</Link>
           </span>
         </Form>
-      </div>
-    </section>
+      </ContentLayout>
+    </PageLayout>
   );
 }
 

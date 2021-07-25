@@ -22,6 +22,7 @@ export const variables = {
   backgroundColor,
   fontFamily,
   fontFamilyHeavy,
+  themeColorPrimary,
   themeColorPrimaryDark,
   themeColorPrimaryLight,
   themeColorSecondary,

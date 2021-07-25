@@ -10,6 +10,8 @@ import registerService from "../../services/registerService/registerService";
 import alertify from "alertifyjs";
 import ShowSideNavbar from "../../contexts/showSideNavbar";
 import User from "../../contexts/user";
+import { ContentLayout } from "../../styles/components/contentLayout";
+import { PageLayout } from "../../styles/components/pageLayout";
 
 function Registration() {
   const {
@@ -47,13 +49,11 @@ function Registration() {
   };
 
   return (
-    <section className="page">
-      <Header
-        title="Inscription"
-        showLoggedUser={false}
-        showMenu={false}
-      ></Header>
-      <div className="content registration-container">
+    <PageLayout>
+      <Header showLoggedUser={false} showMenu={false}>
+        Inscription
+      </Header>
+      <ContentLayout className="registration-container">
         <img className="registration-logo" src={logo} alt="logo" />
 
         <Form
@@ -176,8 +176,8 @@ function Registration() {
             <Link to="/login"> Aller à connexion</Link>
           </span>
         </Form>
-      </div>
-    </section>
+      </ContentLayout>
+    </PageLayout>
   );
 }
 

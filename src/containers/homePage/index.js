@@ -1,13 +1,13 @@
 import "./home.scss";
 import Header from "../../components/header/header";
-
-import React from "react";
+import { ContentLayout } from "../../styles/components/contentLayout";
+import { PageLayout } from "../../styles/components/pageLayout";
 
 function Home() {
   return (
-    <section className="page">
-      <Header title="Accueil" />
-      <div className="content">
+    <PageLayout>
+      <Header>Accueil</Header>
+      <ContentLayout>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero
         tellus, faucibus vel ullamcorper vitae, ultricies fringilla orci.
         Pellentesque nec libero mollis, vehicula augue sed, fringilla tellus.
@@ -45,8 +45,8 @@ function Home() {
         malesuada eu porttitor vitae, malesuada eget nunc. Cras efficitur eget
         nunc ac porta. Mauris quis facilisis mi. Nullam condimentum neque non
         velit aliquam, et viverra eros congue.
-      </div>
-    </section>
+      </ContentLayout>
+    </PageLayout>
   );
 }
 
