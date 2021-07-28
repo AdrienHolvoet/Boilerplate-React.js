@@ -1,52 +1,5 @@
 @import "../../resources/scss/base.module.scss";
 
-.registration-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-
-  .form-group {
-    display: flex;
-    width: 81%;
-  }
-}
-
-.registration-logo {
-  display: block;
-  margin: 0 auto;
-  width: 160px;
-  height: 30%;
-
-  @include breakpoint(desktop) {
-    width: 320px;
-  }
-}
-
-.registration-form {
-  max-width: 1400px;
-  margin: 0 auto;
-  height: 70%;
-}
-
-.registration-input {
-  width: 80%;
-  margin: auto;
-  margin: 5px;
-
-  input {
-    height: 60px;
-  }
-
-  a {
-    color: $theme-color-primary;
-    font-size: 1em;
-    cursor: pointer;
-    padding-top: 2px;
-    float: right;
-  }
-}
-
 .registration-submit {
   width: 80%;
   font-size: 15px;

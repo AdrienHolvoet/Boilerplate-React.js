@@ -9,6 +9,7 @@ Extensions VScode :
 - prettier
 - ESLINT
 - prettier ESLINT
+- ext install vscode-styled-components
 
 ## TODO  
 - i18n

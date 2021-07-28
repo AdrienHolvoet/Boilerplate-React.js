@@ -12,7 +12,7 @@ function About() {
       <Header>A propos</Header>
       <ContentLayout>
         La section About <PrimaryButton>test</PrimaryButton>
-        <CustomCheckbox label="test" on onChange={() => {}}></CustomCheckbox>
+        <CustomCheckbox label="test" onChange={() => {}}></CustomCheckbox>
       </ContentLayout>
     </PageLayout>
   );
