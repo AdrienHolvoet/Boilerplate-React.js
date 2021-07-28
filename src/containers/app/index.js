@@ -9,6 +9,7 @@ import { NAVIGATION } from "./constants";
 import { useMediaQuery } from "react-responsive";
 import GlobalStyle from "../../styles/bases/global.js";
 import { Overlay } from "../../styles/components/overlay";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [user, setUser] = useState();

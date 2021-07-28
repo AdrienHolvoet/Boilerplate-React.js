@@ -5,7 +5,7 @@ import { variables } from "../../styles/bases/variable";
 
 function CustomCheckbox({
   label,
-  className,
+
   onChange,
   checked,
   defaultChecked,

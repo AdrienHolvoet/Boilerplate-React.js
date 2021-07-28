@@ -12,13 +12,15 @@ class NotFoundPage extends React.Component {
       <PageLayout>
         <Header>Erreur</Header>
         <Wrapper>
-          <h1>La page demandée n'est pas disponible.</h1>
-          <h2>
-            Vous pouvez retourner à l'accueil en{" "}
-            <Link to="/">Cliquant ici</Link>
-          </h2>
-          <hr />
-          <Text className="text-secondary">Erreur 404</Text>
+          <div className="text-center">
+            <h1>La page demandée n'est pas disponible.</h1>
+            <h2>
+              Vous pouvez retourner à l'accueil en{" "}
+              <Link to="/">Cliquant ici</Link>
+            </h2>
+            <hr />
+            <Text className="text-secondary">Erreur 404</Text>
+          </div>
         </Wrapper>
       </PageLayout>
     );
@@ -30,7 +32,6 @@ const Wrapper = styled(ContentLayout)`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 
   a {
     text-decoration: underline;
@@ -44,6 +45,7 @@ const Wrapper = styled(ContentLayout)`
 
   h2 {
     font-size: 1.25rem;
+    font-weight: 200;
     ${media.tablet`
       font-size: 1.75rem;
     `}
