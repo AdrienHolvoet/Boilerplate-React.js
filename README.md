@@ -14,7 +14,6 @@ Extensions VScode :
 ## TODO  
 - i18n
 - facebook and google auth
-- Use styled components(remove Scss)
 - change alertify by that maybe https://github.com/fkhadra/react-toastify
 - Implement SSR
 - add module to load to have more easy path

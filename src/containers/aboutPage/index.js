@@ -2,6 +2,7 @@ import Header from "../../components/header/header";
 import CustomCheckbox from "../../components/inputs/customCheckbox";
 import CustomRadio from "../../components/inputs/customRadio";
 import CustomRange from "../../components/inputs/customRange";
+import CustomSwitch from "../../components/inputs/customSwitch";
 import PrimaryButton from "../../components/inputs/primaryButton";
 import { ContentLayout } from "../../styles/components/contentLayout";
 import { PageLayout } from "../../styles/components/pageLayout";
@@ -13,7 +14,7 @@ function About() {
     <PageLayout>
       <Header>A propos</Header>
       <ContentLayout>
-        La section About <PrimaryButton>test</PrimaryButton>
+        <PrimaryButton>test</PrimaryButton>
         <CustomCheckbox label="test" onChange={() => {}}></CustomCheckbox>
         <CustomRange value={70}></CustomRange>
         <div className="d-flex">
@@ -24,6 +25,7 @@ function About() {
             Name2
           </CustomRadio>
         </div>
+        <CustomSwitch id="idSwitch" label="switch" />
       </ContentLayout>
     </PageLayout>
   );
