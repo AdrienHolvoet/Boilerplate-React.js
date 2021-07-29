@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import logo from "../../resources/images/logo.svg";
+import logo from "@images/logo.svg";
 import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
-import { variables } from "../../styles/bases/variable";
-import { media } from "../../styles/bases/media";
+import { variables } from "@variable";
+import { media } from "@media";
 
 const SideNavbar = ({ routes, refSidebar }) => {
   const isTablet = useMediaQuery({

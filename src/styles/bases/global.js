@@ -1,11 +1,10 @@
 import { variables } from "./variable.js";
-import "./font.js";
 import { createGlobalStyle } from "styled-components";
 import "alertifyjs/build/css/alertify.css";
-import BostonRegular from "../../resources/fonts/Boston-Regular.woff";
-import BostonRegular2 from "../../resources/fonts/Boston-Regular.woff2";
-import BostonHeavy from "../../resources/fonts/Boston-Heavy.woff";
-import BostonHeavy2 from "../../resources/fonts/Boston-Heavy.woff2";
+import BostonRegular from "@fonts/Boston-Regular.woff";
+import BostonRegular2 from "@fonts/Boston-Regular.woff2";
+import BostonHeavy from "@fonts/Boston-Heavy.woff";
+import BostonHeavy2 from "@fonts/Boston-Heavy.woff2";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { variables } from "../bases/variable";
+import { variables } from "@variable";
 
 export const ErrorMessage = styled.div`
   padding-top: 5px;

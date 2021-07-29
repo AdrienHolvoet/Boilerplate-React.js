@@ -1,9 +1,9 @@
-import NotFoundPage from "../containers/notFoundPage";
-import Home from "../containers/homePage/index";
+import NotFoundPage from "@containers/notFoundPage";
+import Home from "@containers/homePage/index";
 import { Switch, Route } from "react-router-dom";
-import Login from "../containers/loginPage";
-import Registration from "../containers/registrationPage";
-import About from "../containers/aboutPage";
+import Login from "@containers/loginPage";
+import Registration from "@containers/registrationPage";
+import About from "@containers/aboutPage";
 
 //Replace <Route by <AuthenticatedRoute if you want the user connected to access this route
 //<AuthenticatedRoute exact path="/" component={Home} />

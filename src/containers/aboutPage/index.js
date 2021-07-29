@@ -1,11 +1,11 @@
-import Header from "../../components/header/header";
-import CustomCheckbox from "../../components/inputs/customCheckbox";
-import CustomRadio from "../../components/inputs/customRadio";
-import CustomRange from "../../components/inputs/customRange";
-import CustomSwitch from "../../components/inputs/customSwitch";
-import PrimaryButton from "../../components/inputs/primaryButton";
-import { ContentLayout } from "../../styles/components/contentLayout";
-import { PageLayout } from "../../styles/components/pageLayout";
+import Header from "@components/header/header";
+import CustomCheckbox from "@components/inputs/customCheckbox";
+import CustomRadio from "@components/inputs/customRadio";
+import CustomRange from "@components/inputs/customRange";
+import CustomSwitch from "@components/inputs/customSwitch";
+import PrimaryButton from "@components/inputs/primaryButton";
+import { ContentLayout } from "@styles/components/contentLayout";
+import { PageLayout } from "@styles/components/pageLayout";
 
 import "./style.js";
 

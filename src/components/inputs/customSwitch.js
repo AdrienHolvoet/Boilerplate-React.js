@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
-
 import styled from "styled-components";
-import { variables } from "../../styles/bases/variable";
+import { variables } from "@variable";
 
 function CustomSwitch({ label, id, onChange, disabled, defaultChecked }) {
   return (

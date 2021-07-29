@@ -1,20 +1,20 @@
 import React, { useContext, useEffect } from "react";
 import { Form } from "react-bootstrap";
-import Header from "../../components/header/header";
-import PrimaryButton from "../../components/inputs/primaryButton";
-import logo from "../../resources/images/logo.svg";
+import Header from "@components/header/header";
+import PrimaryButton from "@components/inputs/primaryButton";
+import logo from "@images/logo.svg";
 import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import registerService from "../../services/registerService/registerService";
+import registerService from "@services/registerService/registerService";
 import alertify from "alertifyjs";
-import ShowSideNavbar from "../../contexts/showSideNavbar";
-import User from "../../contexts/user";
-import { ContentLayout } from "../../styles/components/contentLayout";
-import { PageLayout } from "../../styles/components/pageLayout";
-import { ErrorMessage } from "../../styles/components/errorMessage";
+import ShowSideNavbar from "@contexts/showSideNavbar";
+import User from "@contexts/user";
+import { ContentLayout } from "@styles/components/contentLayout";
+import { PageLayout } from "@styles/components/pageLayout";
+import { ErrorMessage } from "@styles/components/errorMessage";
 import styled from "styled-components";
-import { media } from "../../styles/bases/media";
-import { variables } from "../../styles/bases/variable";
+import { media } from "@media";
+import { variables } from "@variable";
 
 function Registration() {
   const {

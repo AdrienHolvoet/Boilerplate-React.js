@@ -2,7 +2,7 @@
 
 import axios from "axios";
 import { handleResponse, handleError } from "./response";
-import { getItem, addItem, removeItem } from "../../utils/localStorage";
+import { getItem, addItem, removeItem } from "@utils/localStorage";
 
 // Define your api url from any source.
 // Pulling from your .env file when on the server or from localhost when locally

@@ -1,7 +1,7 @@
-import Header from "../../components/header/header";
-import { ContentLayout } from "../../styles/components/contentLayout";
-import { PageLayout } from "../../styles/components/pageLayout";
-import H1 from "../../components/titles/h1";
+import Header from "@components/header/header";
+import { ContentLayout } from "@styles/components/contentLayout";
+import { PageLayout } from "@styles/components/pageLayout";
+import H1 from "@components/titles/h1";
 
 function Home() {
   return (

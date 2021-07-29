@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import routes from "../../routes/routes";
+import routes from "@routes/routes";
 import { BrowserRouter as Router } from "react-router-dom";
-import User from "../../contexts/user";
-import { getItem } from "../../utils/localStorage";
-import SideNavbar from "../../components/navigation/sideNavbar";
-import ShowSideNavbar from "../../contexts/showSideNavbar";
+import User from "@contexts/user";
+import { getItem } from "@utils/localStorage";
+import SideNavbar from "@components/navigation/sideNavbar";
+import ShowSideNavbar from "@contexts/showSideNavbar";
 import { NAVIGATION } from "./constants";
 import { useMediaQuery } from "react-responsive";
-import GlobalStyle from "../../styles/bases/global.js";
-import { Overlay } from "../../styles/components/overlay";
+import GlobalStyle from "@styles/bases/global.js";
+import { Overlay } from "@styles/components/overlay";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {

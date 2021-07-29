@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { variables } from "../../styles/bases/variable";
+import { variables } from "@variable";
 
 const SecondaryButton = ({ title, className, onClick, type }) => {
   return (

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Redirect, Route, useHistory } from "react-router-dom";
-import User from "../contexts/user";
+import User from "@contexts/user";
 
 const AuthenticatedRoute = ({ path, component }) => {
   const { user } = useContext(User);

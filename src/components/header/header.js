@@ -1,13 +1,13 @@
-import User from "../../contexts/user";
+import User from "@contexts/user";
 import { useContext, useState, useRef } from "react";
 import { Popover, Overlay } from "react-bootstrap";
-import { removeItem } from "../../utils/localStorage";
-import return_arrow from "../../resources/images/arrow_back_black_24dp.svg";
-import menu_hamburger from "../../resources/images/menu_hamburger.svg";
+import { removeItem } from "@utils/localStorage";
+import return_arrow from "@images/arrow_back_black_24dp.svg";
+import menu_hamburger from "@images/menu_hamburger.svg";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { variables } from "../../styles/bases/variable";
-import { media } from "../../styles/bases/media";
+import { variables } from "@variable";
+import { media } from "@media";
 
 const Header = ({
   children,

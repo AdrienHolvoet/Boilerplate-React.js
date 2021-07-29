@@ -1,4 +1,4 @@
-import ApiCore from "../api/core";
+import ApiCore from "@services/api/core";
 const url = "register";
 const plural = "registers";
 const single = "register";

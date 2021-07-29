@@ -1,4 +1,4 @@
-import ApiCore from "../api/core";
+import ApiCore from "@services/api/core";
 const url = "authenticate";
 const plural = "authenticate";
 const single = "authenticate";

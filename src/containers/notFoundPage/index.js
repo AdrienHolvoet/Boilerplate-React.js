@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../../components/header/header";
-import { ContentLayout } from "../../styles/components/contentLayout";
-import { PageLayout } from "../../styles/components/pageLayout";
+import Header from "@components/header/header";
+import { ContentLayout } from "@styles/components/contentLayout";
+import { PageLayout } from "@styles/components/pageLayout";
 import styled from "styled-components";
-import { media } from "../../styles/bases/media";
-import { variables } from "../../styles/bases/variable";
+import { media } from "@media";
+import { variables } from "@variable";
 class NotFoundPage extends React.Component {
   render() {
     return (

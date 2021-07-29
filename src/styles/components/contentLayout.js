@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { variables } from "../bases/variable";
+import { variables } from "@variable";
 
 export const ContentLayout = styled.div`
   margin-top: ${variables.headerHeigth};

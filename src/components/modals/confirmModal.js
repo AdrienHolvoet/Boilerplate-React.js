@@ -1,6 +1,6 @@
-import PrimaryButton from "../inputs/primaryButton";
-import SecondaryButton from "../inputs/secondaryButton";
-import warning_img from "../../resources/images/warning.svg";
+import PrimaryButton from "@components/inputs/primaryButton";
+import SecondaryButton from "@components/inputs/secondaryButton";
+import warning_img from "@images/warning.svg";
 
 const { Modal } = require("react-bootstrap");
 

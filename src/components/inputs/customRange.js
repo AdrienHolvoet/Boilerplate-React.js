@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { variables } from "../../styles/bases/variable";
+import { variables } from "@variable";
 
 const CustomRange = ({ value, disabled }) => {
   const [sValue, setSValue] = useState(value);

@@ -1,4 +1,4 @@
-import { lightenDarkenColor } from "../../utils/util.js";
+import { lightenDarkenColor } from "@utils/util.js";
 
 const backgroundColor = "#cccccc31";
 const fontFamily = "Boston";
