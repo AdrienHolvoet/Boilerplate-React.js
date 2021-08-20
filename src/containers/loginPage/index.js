@@ -16,8 +16,10 @@ import { ErrorMessage } from "@styles/components/errorMessage";
 import styled from "styled-components";
 import { media } from "@styles/bases/media";
 import { variables } from "@styles/bases/variable";
+import { useTranslation } from "react-i18next";
 
 function Login(props) {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -55,7 +57,9 @@ function Login(props) {
         addItem("user", res);
         history.push("/");
       } else {
-        alertify.error("Le nom d'utilisateur ou le mot de passe est incorrect");
+        alertify.error(
+          t("Le nom d'utilisateur ou le mot de passe est incorrect")
+        );
       }
     });
   };
@@ -63,7 +67,7 @@ function Login(props) {
   return (
     <PageLayout>
       <Header showLoggedUser={false} showMenu={false}>
-        Connexion
+        {t("login.page.title")}
       </Header>
       <Wrapper>
         <img src={logo} alt="logo" />

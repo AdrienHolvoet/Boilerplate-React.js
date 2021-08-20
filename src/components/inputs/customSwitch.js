@@ -11,9 +11,9 @@ function CustomSwitch({ label, id, onChange, disabled, defaultChecked }) {
           id={id}
           onChange={onChange}
           defaultChecked={defaultChecked}
-          class="custom-control-input"
+          className="custom-control-input"
         />
-        <label title="" htmlFor={id} class="custom-control-label">
+        <label title="" htmlFor={id} className="custom-control-label">
           {label}
         </label>
       </span>

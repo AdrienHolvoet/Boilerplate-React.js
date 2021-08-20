@@ -10,13 +10,12 @@ Extensions VScode :
 - ESLINT
 - prettier ESLINT
 - ext install vscode-styled-components
+- https://dev.to/adrai/how-to-properly-internationalize-a-react-application-using-i18next-3hdb
 
 ## TODO  
-- i18n
 - facebook and google auth
 - change alertify by that maybe https://github.com/fkhadra/react-toastify
 - Implement SSR
-- add module to load to have more easy path
 - add Redux
     
 ## Available Scripts

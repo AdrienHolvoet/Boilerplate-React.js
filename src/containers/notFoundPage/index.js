@@ -41,6 +41,7 @@ const Wrapper = styled(ContentLayout)`
   h1 {
     font-size: 1.75rem;
     ${media.tablet`font-size: 2.5rem;`}
+    margin-bottom: 5px;
   }
 
   h2 {

@@ -2,13 +2,15 @@ import Header from "@components/header/header";
 import { ContentLayout } from "@styles/components/contentLayout";
 import { PageLayout } from "@styles/components/pageLayout";
 import H1 from "@components/titles/h1";
+import { useTranslation } from "react-i18next";
 
 function Home() {
+  const { t } = useTranslation();
   return (
     <PageLayout>
-      <Header>Accueil</Header>
+      <Header>{t("home.page.title")}</Header>
       <ContentLayout>
-        <H1>Random</H1>
+        <H1> {t("home.page.title")}</H1>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero
         tellus, faucibus vel ullamcorper vitae, ultricies fringilla orci.
         Pellentesque nec libero mollis, vehicula augue sed, fringilla tellus.

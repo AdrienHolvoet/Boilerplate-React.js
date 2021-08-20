@@ -15,6 +15,8 @@ module.exports = {
       "@services": path.resolve(__dirname, "src/services/"),
       "@containers": path.resolve(__dirname, "src/containers/"),
       "@fonts": path.resolve(__dirname, "src/resources/fonts"),
+      "@flags": path.resolve(__dirname, "src/resources/images/flags"),
+      "@translations": path.resolve(__dirname, "src/resources/translations"),
     },
   },
 };

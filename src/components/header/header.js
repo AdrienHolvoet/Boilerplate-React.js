@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { variables } from "@variable";
 import { media } from "@media";
+import LanguageSelection from "../languageSelection/languageSelection";
+import { useTranslation } from "react-i18next";
 
 const Header = ({
   children,
@@ -19,6 +21,8 @@ const Header = ({
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
   const ref = useRef(null);
+
+  const { t } = useTranslation();
 
   const handleClick = (event) => {
     setShow(!show);
@@ -51,36 +55,46 @@ const Header = ({
       )}
 
       <Title>{children}</Title>
-      {showLoggedUser &&
-        (user ? (
-          <LoggedUser ref={ref} onClick={handleClick}>
-            {user && user.username && user.username.substring(0, 2)}
-            <Overlay
-              show={show}
-              arrowProps={null}
-              target={target}
-              placement="bottom"
-              container={ref.current}
-              onHide={() => setShow(false)}
-              rootClose={true}
-              transition={false}
-            >
-              <Popover id="popover-contained">
-                <Popover.Content onClick={logOffUser}>
-                  Se déconnecter
-                </Popover.Content>
-              </Popover>
-            </Overlay>
-          </LoggedUser>
-        ) : (
-          <UserLogIn>
-            <Link to="/login">Connexion</Link>
-          </UserLogIn>
-        ))}
+      <WrapperUserAndLang>
+        <LanguageSelection />
+        {showLoggedUser &&
+          (user ? (
+            <LoggedUser ref={ref} onClick={handleClick}>
+              {user && user.username && user.username.substring(0, 2)}
+              <Overlay
+                show={show}
+                arrowProps={null}
+                target={target}
+                placement="bottom"
+                container={ref.current}
+                onHide={() => setShow(false)}
+                rootClose={true}
+                transition={false}
+              >
+                <Popover id="popover-contained">
+                  <Popover.Content onClick={logOffUser}>
+                    Se déconnecter
+                  </Popover.Content>
+                </Popover>
+              </Overlay>
+            </LoggedUser>
+          ) : (
+            <UserLogIn>
+              <Link to="/login"> {t("login.page.title")}</Link>
+            </UserLogIn>
+          ))}
+      </WrapperUserAndLang>
     </Wrapper>
   );
 };
 
+const WrapperUserAndLang = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 5px;
+`;
 const Wrapper = styled.div`
   background-color: ${variables.themeColorWhite};
   height: ${variables.headerHeigth};
@@ -151,8 +165,6 @@ const UserLogIn = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  position: absolute;
-  right: 5px;
   padding: 7px;
   border-radius: 10px;
   background-color: ${variables.themeColorPrimary};

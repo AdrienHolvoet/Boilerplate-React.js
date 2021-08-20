@@ -1,5 +1,5 @@
 export const NAVIGATION = [
-  { name: "Home", url: "/" },
-  { name: "About", url: "/about" },
+  { name: "nav.home", url: "/" },
+  { name: "nav.about", url: "/about" },
   { name: "404", url: "/404" },
 ];

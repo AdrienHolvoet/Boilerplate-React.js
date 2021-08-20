@@ -1,0 +1,16 @@
+{
+    "fr": "fr",
+    "en": "en",
+
+    "nav.home": "Home",
+    "nav.about": "About",
+
+    "login.page.title": "Login",
+
+    "home.page.title": "Home",
+
+    "about.page.labeName1": "Name1",
+    "about.page.labeName2": "Name2",
+    "about.page.title": "About",
+    "about.page.input.label": "Send"
+}

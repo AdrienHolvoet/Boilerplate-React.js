@@ -5,8 +5,10 @@ import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 import { variables } from "@variable";
 import { media } from "@media";
+import { useTranslation } from "react-i18next";
 
 const SideNavbar = ({ routes, refSidebar }) => {
+  const { t } = useTranslation();
   const isTablet = useMediaQuery({
     query: "(max-width: 768px)",
   });
@@ -17,7 +19,7 @@ const SideNavbar = ({ routes, refSidebar }) => {
     }
   };
   return (
-    <Sidenavbar ref={refSidebar} id="sidenavbar">
+    <SideNavbarWrapper ref={refSidebar} id="sidenavbar">
       <NavHeader>
         <Link to="/" onClick={onClickLink}>
           <img src={logo} alt="logo" />
@@ -26,15 +28,15 @@ const SideNavbar = ({ routes, refSidebar }) => {
       <Wrapper>
         {routes?.map((route, index) => (
           <Item key={index} exact to={route.url} onClick={onClickLink}>
-            {route.name}
+            {t(route.name)}
           </Item>
         ))}
       </Wrapper>
-    </Sidenavbar>
+    </SideNavbarWrapper>
   );
 };
 
-const Sidenavbar = styled.section`
+const SideNavbarWrapper = styled.section`
   height: 100%;
   background-color: ${variables.themeColorWhite};
   font-weight: bold;
