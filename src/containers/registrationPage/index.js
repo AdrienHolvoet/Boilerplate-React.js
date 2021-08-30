@@ -15,6 +15,7 @@ import { ErrorMessage } from "@styles/components/errorMessage";
 import styled from "styled-components";
 import { media } from "@media";
 import { variables } from "@variable";
+import { useTranslation } from "react-i18next";
 
 function Registration() {
   const {
@@ -27,6 +28,8 @@ function Registration() {
   const { setShowSideNavbar } = useContext(ShowSideNavbar);
 
   const history = useHistory();
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     setShowSideNavbar(false);
@@ -41,12 +44,10 @@ function Registration() {
   const onSubmit = (data) => {
     registerService.post(data).then((res) => {
       if (res) {
-        alertify.success(
-          "L'inscription est un succès, vous pouvez vous connecter"
-        );
+        alertify.success(t("registration.page.register.success"));
         history.push("/login");
       } else {
-        alertify.error("L'inscription n'a pas abouti.");
+        alertify.success(t("registration.page.register.error"));
       }
     });
   };
@@ -54,7 +55,7 @@ function Registration() {
   return (
     <PageLayout>
       <Header showLoggedUser={false} showMenu={false}>
-        Inscription
+        {t("registration")}
       </Header>
       <Wrapper>
         <img src={logo} alt="logo" />
@@ -69,15 +70,16 @@ function Registration() {
                 })}
                 autoComplete="given-name"
                 type="text"
-                placeholder="Prénom*"
+                placeholder={t("forename") + "*"}
               />
               {errors?.firstName?.type === "required" && (
-                <ErrorMessage>Le prénom est requis</ErrorMessage>
+                <ErrorMessage>
+                  {t("registration.page.forename.required")}
+                </ErrorMessage>
               )}
               {errors?.firstName?.type === "pattern" && (
                 <ErrorMessage>
-                  Le prénom ne peut pas contenir de caractères spéciaux autre
-                  que '-' et espace
+                  {t("registration.page.forename.pattern")}
                 </ErrorMessage>
               )}
             </FormInputWrapper>
@@ -90,15 +92,16 @@ function Registration() {
                 })}
                 autoComplete="family-name"
                 type="text"
-                placeholder="Nom*"
+                placeholder={t("name") + "*"}
               />
               {errors?.lastname?.type === "required" && (
-                <ErrorMessage>Le nom est requis</ErrorMessage>
+                <ErrorMessage>
+                  {t("registration.page.name.required")}
+                </ErrorMessage>
               )}
               {errors?.lastname?.type === "pattern" && (
                 <ErrorMessage>
-                  Le nom ne peut pas contenir de caractères spéciaux autre que
-                  '-' et espace
+                  {t("registration.page.name.pattern")}
                 </ErrorMessage>
               )}
             </FormInputWrapper>
@@ -114,22 +117,20 @@ function Registration() {
                 })}
                 autoComplete="username"
                 type="text"
-                placeholder="Nom d'utilisateur*"
+                placeholder={t("username") + "*"}
               />
               {errors?.username?.type === "required" && (
-                <ErrorMessage>Le nom d'utilisateur est requis</ErrorMessage>
+                <ErrorMessage>{t("username.required")}</ErrorMessage>
               )}
               {errors?.username?.type === "pattern" && (
                 <ErrorMessage>
-                  Le nom d'utilisateur ne peut pas contenir de caractères
-                  spéciaux autre que ' - ', ' _ ', ' . ' et espace.
+                  {t("registration.page.username.pattern")}
                 </ErrorMessage>
               )}
               {(errors?.username?.type === "minLength" ||
                 errors?.username?.type === "maxLength") && (
                 <ErrorMessage>
-                  Le nom d'utilisateur doit être compris entre 8 et 30
-                  caractères
+                  {t("registration.page.username.length")}
                 </ErrorMessage>
               )}
             </FormInputWrapper>
@@ -141,16 +142,15 @@ function Registration() {
                 })}
                 autoComplete="current-password"
                 type="password"
-                placeholder="Mot de passe*"
+                placeholder={t("password") + "*"}
                 autoComplete="password"
               />
               {errors?.password?.type === "required" && (
-                <ErrorMessage>Le mot de passe est requis</ErrorMessage>
+                <ErrorMessage>{t("password.required")}</ErrorMessage>
               )}
               {errors?.password?.type === "pattern" && (
                 <ErrorMessage>
-                  Le mot de passe doit faire au moins 8 caractères et contenir
-                  au moins une majuscule, une minuscule et un chiffre
+                  {t("registration.page.password.pattern")}
                 </ErrorMessage>
               )}
             </FormInputWrapper>
@@ -160,16 +160,18 @@ function Registration() {
               {...register("email", { required: true })}
               autoComplete="email"
               type="email"
-              placeholder="Email*"
+              placeholder={t("email") + "*"}
             />
             {errors?.email?.type === "required" && (
-              <ErrorMessage>L'email est requis</ErrorMessage>
+              <ErrorMessage>
+                {t("registration.page.email.required")}
+              </ErrorMessage>
             )}
           </FormInputWrapper>
-          <FormSubmit title="s'inscrire" />
+          <FormSubmit title={t("register")} />
           <Text>
-            Vous avez déjà un compte?
-            <Link to="/login"> Aller à connexion</Link>
+            {t("registration.page.alreadyRegister")}
+            <Link to="/login">{t("registration.page.goToLogin")}</Link>
           </Text>
         </FormWrapper>
       </Wrapper>

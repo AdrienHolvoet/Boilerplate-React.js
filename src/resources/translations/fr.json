@@ -2,15 +2,66 @@
     "fr": "fr",
     "en": "en",
 
-    "nav.home": "Acceuil",
-    "nav.about": "À propos",
 
-    "login.page.title": "Connexion",
 
-    "home.page.title": "Acceuil",
-
+    "__A__" : "A",
     "about.page.labeName1": "Nom1",
     "about.page.labeName2": "Nom2",
     "about.page.title": "À propos",
-    "about.page.input.label": "Envoyer"
+    "about.page.input.label": "Envoyer",
+
+    "__C__" : "C",
+    "confirmModal.confirmation.title": "Confirmation",
+    "confirmModal.confirmation.text": "Êtes-vous sur de vouloir supprimer cet élément?",
+    "connection": "Connexion",
+
+    "__E__" : "E",
+    "error" : "Erreur",
+    "email": "Email",
+
+    "__F__" : "F",
+    "forename": "Prénom",
+
+    "__H__" : "H",
+    "home.page.title": "Accueil",
+    "header.label.disconnect": "Se déconnecter",
+
+    "__L__" : "L",
+    "login.page.title": "Connexion",
+    "login.page.notYetRegister": "Pas encore inscrit?",
+    "login.page.forgotPassword": "Mot de passe oublié?",
+    "login.page.connectionError": "Le nom d'utilisateur ou le mot de passe est incorrect",
+
+    "__N__" : "N",
+    "name": "Nom",
+    "nav.home": "Accueil",
+    "nav.about": "À propos",
+    "notFound.page.info": "La page demandée n'est pas disponible.",
+    "notFound.page.returnHome": "Vous pouvez retourner à l'accueil en ",
+    "notFound.page.clickHere": "Cliquant ici",
+
+    "__P__" : "P",
+    "password": "Mot de passe",
+    "password.required": "Le mot de passe est requis",
+
+    "__R__" : "R",
+    "register": "S'inscrire",
+    "registration": "Inscription",
+    "registration.page.register.success": "L'inscription est un succès, vous pouvez vous connecter",
+    "registration.page.register.error": "L'inscription n'a pas abouti",
+    "registration.page.forename.required": "Le prénom est requis",
+    "registration.page.forename.pattern": "Le prénom ne peut pas contenir de caractères spéciaux autre que '-' et espace",
+    "registration.page.name.required": "Le nom est requis",
+    "registration.page.name.pattern": "Le nom ne peut pas contenir de caractères spéciaux autre que '-' et espace",
+    "registration.page.username.pattern": "Le nom d'utilisateur ne peut pas contents de caractères spéciaux autre que '-' et espace",
+    "registration.page.username.length": "Le nom d'utilisateur doit être compris entre 8 et 30 caractères",
+    "registration.page.password.pattern": "Le mot de passe ne peut pas contents de caractères spéciaux autre que '-' et espace",
+    "registration.page.email.required": "L'email est requis",
+    "registration.page.alreadyRegister": "Vous avez déjà un compte?",
+    "registration.page.goToLogin": " Aller à connexion",
+
+    "__U__" : "U",
+    "username": "Nom d'utilisateur",
+    "username.required": "Le nom d'utilisateur est requis"
+    
 }
