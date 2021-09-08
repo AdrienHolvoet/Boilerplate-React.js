@@ -27,7 +27,7 @@ function LanguageSelection() {
     <Wrapper>
       <CurrentMultiLang onClick={() => setShowDropdown(!showDropdown)}>
         {getImageFlag(i18n.language)}
-        <span>{i18n.language}</span>
+        <span>{i18n.language.substring(0, 2)}</span>
       </CurrentMultiLang>
       <Dropdown>
         {SUPPORTED_LANGUAGES.map((lang, index) => (
@@ -37,7 +37,7 @@ function LanguageSelection() {
             onClick={() => changeLanguageHandler(lang)}
           >
             {getImageFlag(lang)}
-            <span>{t(lang)}</span>
+            <span>{t(lang).substring(0, 2)}</span>
           </MultiLang>
         ))}
       </Dropdown>
