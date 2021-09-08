@@ -73,7 +73,7 @@ const Header = ({
               >
                 <Popover id="popover-contained">
                   <Popover.Content onClick={logOffUser}>
-                    Se déconnecter
+                    {t("header.label.disconnect")}
                   </Popover.Content>
                 </Popover>
               </Overlay>
@@ -138,7 +138,6 @@ const LoggedUser = styled.div`
   color: ${variables.themeColorWhite};
   font-weight: bold;
   cursor: pointer;
-  position: absolute;
   right: 5px;
   text-transform: uppercase;
   cursor: pointer;

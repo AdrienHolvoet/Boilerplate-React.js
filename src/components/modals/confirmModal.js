@@ -1,6 +1,7 @@
 import PrimaryButton from "@components/inputs/primaryButton";
 import SecondaryButton from "@components/inputs/secondaryButton";
 import warning_img from "@images/warning.svg";
+import { useTranslation } from "react-i18next";
 
 const { Modal } = require("react-bootstrap");
 
@@ -11,6 +12,7 @@ function ConfirmModal({ show, handleClose, handleConfirm, text }) {
     handleClose(false);
   };
 
+  const { t } = useTranslation();
   return (
     <Modal
       aria-labelledby="contained-modal-title-vcenter"
@@ -19,7 +21,7 @@ function ConfirmModal({ show, handleClose, handleConfirm, text }) {
       onHide={handleClose}
     >
       <Modal.Header closeButton>
-        <Modal.Title>Confirmation</Modal.Title>
+        <Modal.Title>{t("confirmModal.confirmation.title")}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div className="text-center">
@@ -27,7 +29,7 @@ function ConfirmModal({ show, handleClose, handleConfirm, text }) {
             <img src={warning_img} />
           </div>
 
-          {text ? text : "Êtes-vous sur de vouloir supprimer cet élément"}
+          {text ? text : t("confirmModal.confirmation.text")}
         </div>
       </Modal.Body>
       <Modal.Footer>

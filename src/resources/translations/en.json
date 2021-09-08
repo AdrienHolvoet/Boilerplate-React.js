@@ -2,15 +2,63 @@
     "fr-FR": "fr-FR",
     "en-EN": "en-EN",
 
-    "nav.home": "Home",
-    "nav.about": "About",
-
-    "login.page.title": "Login",
-
-    "home.page.title": "Home",
-
+    "__A__" : "A",
     "about.page.labeName1": "Name1",
     "about.page.labeName2": "Name2",
     "about.page.title": "About",
-    "about.page.input.label": "Send"
+    "about.page.input.label": "Send",
+
+    "__C__" : "C",
+    "confirmModal.confirmation.title": "Confirmation",
+    "confirmModal.confirmation.text": "Are you sure you want to delete this item?",
+    "connection": "Connection",
+
+    "__E__" : "E",
+    "error" : "Error",
+    "email": "Email",
+
+    "__F__" : "F",
+    "forename": "Forename",
+
+    "__H__" : "H",
+    "header.label.disconnect": "Sign out",
+    "home.page.title": "Home",
+
+    "__L__" : "L",
+    "login.page.title": "Login",
+    "login.page.notYetRegister": "Not registered?",
+    "login.page.forgotPassword": "Forgot your password?",
+    "login.page.connectionError": "Username or password is incorrect",
+
+    "__N__" : "N",
+    "name": "Name",
+    "nav.home": "Home",
+    "nav.about": "About",
+    "notFound.page.info": "The requested page is not available.",
+    "notFound.page.returnHome": "You can return to the home page by ",
+    "notFound.page.clickHere": "Click here",
+
+    "__P__" : "P",
+    "password": "Password",
+    "password.required": "The password is required",
+
+    "__R__" : "R",
+    "register": "Register",
+    "registration": "Registration",
+    "registration.page.register.success": "Registration is successful, you can log in",
+    "registration.page.register.error": "Registration was unsuccessful",
+    "registration.page.forename.required": "The forename is required",
+    "registration.page.forename.pattern": "The forename cannot contain any special characters other than '-' and space",
+    "registration.page.name.required": "The name is required",
+    "registration.page.name.pattern": "The name cannot contain any special characters other than '-' and space",
+    "registration.page.username.pattern": "The username cannot contain any special characters other than '-' and space",
+    "registration.page.username.length": "The username must be between 8 and 30 characters",
+    "registration.page.password.pattern": "The password cannot contain any special characters other than '-' and space",
+    "registration.page.email.required": "The email is required",
+    "registration.page.alreadyRegister": "Already have an account?",
+    "registration.page.goToLogin": " Go to login",
+
+    "__U__" : "U",
+    "username": "Username",
+    "username.required": "The username is required"
 }

@@ -57,9 +57,7 @@ function Login(props) {
         addItem("user", res);
         history.push("/");
       } else {
-        alertify.error(
-          t("Le nom d'utilisateur ou le mot de passe est incorrect")
-        );
+        alertify.error(t("login.page.connectionError"));
       }
     });
   };
@@ -78,10 +76,10 @@ function Login(props) {
               {...register("username", { required: true })}
               autoComplete="username"
               type="text"
-              placeholder="Nom d'utilisateur*"
+              placeholder={t("username") + "*"}
             />
             {errors?.username?.type === "required" && (
-              <ErrorMessage>Le nom d'utilisateur est requis</ErrorMessage>
+              <ErrorMessage>{t("username.required")}</ErrorMessage>
             )}
           </FormInputWrapper>
           <FormInputWrapper>
@@ -89,17 +87,18 @@ function Login(props) {
               {...register("password", { required: true })}
               autoComplete="current-password"
               type="password"
-              placeholder="Mot de passe* "
+              placeholder={t("password") + "*"}
               id="current-password"
             />
             {errors?.password?.type === "required" && (
-              <ErrorMessage>Le mot de passe est requis</ErrorMessage>
+              <ErrorMessage>{t("password.required")}</ErrorMessage>
             )}
-            <Link to="forgot-password">Mot de passe oublié?</Link>
+            <Link to="forgot-password">{t("login.page.forgotPassword")}</Link>
           </FormInputWrapper>
-          <FormSubmit title="s'identifier" />
+          <FormSubmit title={t("connection")} />
           <Text>
-            Pas encore inscrit? <Link to="/registration"> S'INSCRIRE</Link>
+            {t("login.page.notYetRegister")}
+            <Link to="/registration"> {t("registration")}</Link>
           </Text>
         </FormWrapper>
       </Wrapper>
