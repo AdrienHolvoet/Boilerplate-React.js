@@ -16,7 +16,6 @@ function LanguageSelection() {
   };
 
   const getImageFlag = (lang) => {
-    console.log(lang);
     const image = require("../../resources/images/flags/" + lang + ".svg")
       .default;
 
