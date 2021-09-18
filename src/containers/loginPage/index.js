@@ -17,6 +17,8 @@ import styled from "styled-components";
 import { media } from "@styles/bases/media";
 import { variables } from "@styles/bases/variable";
 import { useTranslation } from "react-i18next";
+import FacebookLogin from "react-facebook-login";
+import GoogleLogin from "react-google-login";
 
 function Login(props) {
   const { t } = useTranslation();
@@ -62,6 +64,14 @@ function Login(props) {
     });
   };
 
+  const responseFacebook = (response) => {
+    console.log(response);
+  };
+
+  const responseGoogle = (response) => {
+    console.log(response);
+  };
+
   return (
     <PageLayout>
       <Header showLoggedUser={false} showMenu={false}>
@@ -69,6 +79,23 @@ function Login(props) {
       </Header>
       <Wrapper>
         <img src={logo} alt="logo" />
+        <FacebookLogin
+          appId="4273682032669379"
+          autoLoad
+          callback={responseFacebook}
+          render={(renderProps) => (
+            <button onClick={renderProps.onClick}>
+              This is my custom FB button
+            </button>
+          )}
+        />
+        <GoogleLogin
+          clientId="78721849523-2v06tdrlosbps0j7vl3uq6mo9c3fo2fa.apps.googleusercontent.com"
+          buttonText="Login"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={"single_host_origin"}
+        />
 
         <FormWrapper onSubmit={handleSubmit(onSubmit)}>
           <FormInputWrapper>
