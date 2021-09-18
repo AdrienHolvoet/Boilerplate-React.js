@@ -1,14 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Form } from "react-bootstrap";
 import Header from "@components/header/header";
 import PrimaryButton from "@components/inputs/primaryButton";
 import logo from "@images/logo.svg";
 import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import authenticationService from "@services/authenticationService/authenticationService";
 import alertify from "alertifyjs";
-import User from "@contexts/user";
-import ShowSideNavbar from "@contexts/showSideNavbar";
 import { addItem } from "@utils/localStorage";
 import { ContentLayout } from "@styles/components/contentLayout";
 import { PageLayout } from "@styles/components/pageLayout";
@@ -17,6 +14,9 @@ import styled from "styled-components";
 import { media } from "@styles/bases/media";
 import { variables } from "@styles/bases/variable";
 import { useTranslation } from "react-i18next";
+import { login, setUser } from "./actions";
+import { useDispatch, useSelector } from "react-redux";
+import { setShowSideNavbar } from "../app/actions";
 
 function Login(props) {
   const { t } = useTranslation();
@@ -26,12 +26,13 @@ function Login(props) {
     formState: { errors },
   } = useForm();
 
-  const { user, setUser } = useContext(User);
-  const { setShowSideNavbar } = useContext(ShowSideNavbar);
+  const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.user);
   const history = useHistory();
 
   useEffect(() => {
-    setShowSideNavbar(false);
+    dispatch(setShowSideNavbar(false));
     if (user) {
       if (
         props &&
@@ -45,14 +46,14 @@ function Login(props) {
       }
     }
     return () => {
-      setShowSideNavbar(true);
+      dispatch(setShowSideNavbar(true));
     };
   }, [user]);
 
   const onSubmit = (data) => {
-    authenticationService.post(data).then((res) => {
+    login(data).then((res) => {
       if (res) {
-        setUser(res);
+        dispatch(setUser(res));
         //addItem to localStorage
         addItem("user", res);
         history.push("/");
@@ -73,13 +74,13 @@ function Login(props) {
         <FormWrapper onSubmit={handleSubmit(onSubmit)}>
           <FormInputWrapper>
             <Form.Control
-              {...register("username", { required: true })}
-              autoComplete="username"
+              {...register("email", { required: true })}
+              autoComplete="email"
               type="text"
-              placeholder={t("username") + "*"}
+              placeholder={t("email") + "*"}
             />
             {errors?.username?.type === "required" && (
-              <ErrorMessage>{t("username.required")}</ErrorMessage>
+              <ErrorMessage>{t("email.required")}</ErrorMessage>
             )}
           </FormInputWrapper>
           <FormInputWrapper>

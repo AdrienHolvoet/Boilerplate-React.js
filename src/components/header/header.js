@@ -1,5 +1,4 @@
-import User from "@contexts/user";
-import { useContext, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { Popover, Overlay } from "react-bootstrap";
 import { removeItem } from "@utils/localStorage";
 import return_arrow from "@images/arrow_back_black_24dp.svg";
@@ -10,6 +9,8 @@ import { variables } from "@variable";
 import { media } from "@media";
 import LanguageSelection from "../languageSelection/languageSelection";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { unsetUser } from "../../containers/loginPage/actions";
 
 const Header = ({
   children,
@@ -17,12 +18,16 @@ const Header = ({
   showMenu = true,
   returnPath,
 }) => {
-  const { user, setUser } = useContext(User);
+  const user = useSelector((state) => state.user);
+
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
+
   const ref = useRef(null);
 
   const { t } = useTranslation();
+
+  const dispatch = useDispatch();
 
   const handleClick = (event) => {
     setShow(!show);
@@ -30,7 +35,7 @@ const Header = ({
   };
 
   const logOffUser = () => {
-    setUser(null);
+    dispatch(unsetUser());
     removeItem("user");
   };
 
@@ -60,7 +65,8 @@ const Header = ({
         {showLoggedUser &&
           (user ? (
             <LoggedUser ref={ref} onClick={handleClick}>
-              {user && user.username && user.username.substring(0, 2)}
+              {user &&
+                user.firstName.substring(0, 1) + user.lastName.substring(0, 1)}
               <Overlay
                 show={show}
                 arrowProps={null}

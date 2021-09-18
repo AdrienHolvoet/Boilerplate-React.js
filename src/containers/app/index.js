@@ -1,29 +1,30 @@
 import React, { useState, useEffect, useRef } from "react";
 import routes from "@routes/routes";
 import { BrowserRouter as Router } from "react-router-dom";
-import User from "@contexts/user";
 import { getItem } from "@utils/localStorage";
 import SideNavbar from "@components/navigation/sideNavbar";
-import ShowSideNavbar from "@contexts/showSideNavbar";
 import { NAVIGATION } from "./constants";
 import { useMediaQuery } from "react-responsive";
 import GlobalStyle from "@styles/bases/global.js";
 import { Overlay } from "@styles/components/overlay";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { setUser } from "../loginPage/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
-  const [user, setUser] = useState();
-  const [showSideNavbar, setShowSideNavbar] = useState(true);
+  const showSideNavbar = useSelector((state) => state.app?.showSideNavbar);
   const isTablet = useMediaQuery({
     query: "(max-width: 768px)",
   });
   const refSidebar = useRef();
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     //get user with jwt token from local storage
     const lUser = JSON.parse(getItem("user"));
     if (lUser) {
-      setUser(lUser);
+      dispatch(setUser(lUser));
     }
   }, []);
 
@@ -54,17 +55,13 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <ShowSideNavbar.Provider value={{ showSideNavbar, setShowSideNavbar }}>
-        <User.Provider value={{ user, setUser }}>
-          <Router>
-            <Overlay id="overlay" />
-            {showSideNavbar && (
-              <SideNavbar refSidebar={refSidebar} routes={NAVIGATION} />
-            )}
-            {routes}
-          </Router>
-        </User.Provider>
-      </ShowSideNavbar.Provider>
+      <Router>
+        <Overlay id="overlay" />
+        {showSideNavbar && (
+          <SideNavbar refSidebar={refSidebar} routes={NAVIGATION} />
+        )}
+        {routes}
+      </Router>
     </>
   );
 }

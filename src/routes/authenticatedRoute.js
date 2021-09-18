@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import { Redirect, Route, useHistory } from "react-router-dom";
-import User from "@contexts/user";
+import { useSelector } from "react-redux";
 
 const AuthenticatedRoute = ({ path, component }) => {
-  const { user } = useContext(User);
+  const user = useSelector((state) => state.user);
   const history = useHistory();
 
   return user ? (

@@ -91,6 +91,7 @@ const addAuthorizationHeader = () => {
 };
 
 /** @param {string} resource */
+/** @param {boolean} secured */
 const getAll = (resource, secured = false) => {
   if (secured) {
     addAuthorizationHeader();
@@ -103,6 +104,8 @@ const getAll = (resource, secured = false) => {
 
 /** @param {string} resource */
 /** @param {string} id */
+/** @param {object} params */
+/** @param {boolean} secured */
 const get = (resource, id, params = null, secured = false) => {
   if (secured) {
     addAuthorizationHeader();
@@ -117,6 +120,8 @@ const get = (resource, id, params = null, secured = false) => {
 
 /** @param {string} resource */
 /** @param {object} model */
+/** @param {boolean} secured */
+/** @param {object} config */
 const post = (resource, model, secured = false, config = null) => {
   if (secured) {
     addAuthorizationHeader();
@@ -130,6 +135,7 @@ const post = (resource, model, secured = false, config = null) => {
 /** @param {string} resource */
 /** @param {string} id */
 /** @param {object} body */
+/** @param {boolean} secured */
 const put = (resource, id, body, secured = false) => {
   if (secured) {
     addAuthorizationHeader();
@@ -142,6 +148,7 @@ const put = (resource, id, body, secured = false) => {
 
 /** @param {string} resource */
 /** @param {object} model */
+/** @param {boolean} secured */
 const patch = (resource, model, secured = false) => {
   if (secured) {
     addAuthorizationHeader();
@@ -154,6 +161,7 @@ const patch = (resource, model, secured = false) => {
 
 /** @param {string} resource */
 /** @param {string} id */
+/** @param {boolean} secured */
 const remove = (resource, id, secured = false) => {
   if (secured) {
     addAuthorizationHeader();

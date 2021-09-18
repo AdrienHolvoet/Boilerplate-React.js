@@ -1,6 +1,6 @@
 import ApiCore from "@services/api/core";
 import { apiProvider } from "../api/provider";
-import { REGISTRATION_ENDPOINT } from "./constant";
+import { REGISTRATION_ENDPOINT, LOGIN_ENDPOINT } from "./constant";
 
 const url = "authentication";
 const plural = "authentication";
@@ -25,5 +25,10 @@ export default authenticationService;
 
 authenticationService.register = (body) => {
   const newUrl = url + REGISTRATION_ENDPOINT;
+  return apiProvider.post(newUrl, body);
+};
+
+authenticationService.login = (body) => {
+  const newUrl = url + LOGIN_ENDPOINT;
   return apiProvider.post(newUrl, body);
 };

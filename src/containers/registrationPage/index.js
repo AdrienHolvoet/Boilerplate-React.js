@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Form } from "react-bootstrap";
 import Header from "@components/header/header";
 import PrimaryButton from "@components/inputs/primaryButton";
@@ -7,8 +7,6 @@ import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import authenticationService from "@services/authenticationService/authenticationService";
 import alertify from "alertifyjs";
-import ShowSideNavbar from "@contexts/showSideNavbar";
-import User from "@contexts/user";
 import { ContentLayout } from "@styles/components/contentLayout";
 import { PageLayout } from "@styles/components/pageLayout";
 import { ErrorMessage } from "@styles/components/errorMessage";
@@ -16,6 +14,8 @@ import styled from "styled-components";
 import { media } from "@media";
 import { variables } from "@variable";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { setShowSideNavbar } from "../app/actions";
 
 function Registration() {
   const {
@@ -24,20 +24,19 @@ function Registration() {
     formState: { errors },
   } = useForm();
 
-  const { user } = useContext(User);
-  const { setShowSideNavbar } = useContext(ShowSideNavbar);
+  const user = useSelector((state) => state.user);
 
   const history = useHistory();
 
   const { t } = useTranslation();
 
   useEffect(() => {
-    setShowSideNavbar(false);
+    setShow(false);
     if (user) {
       history.replace("/");
     }
     return () => {
-      setShowSideNavbar(true);
+      dispatch(setShowSideNavbar(true));
     };
   }, [user]);
 
