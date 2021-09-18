@@ -5,7 +5,7 @@ import PrimaryButton from "@components/inputs/primaryButton";
 import logo from "@images/logo.svg";
 import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import registerService from "@services/registerService/registerService";
+import authenticationService from "@services/authenticationService/authenticationService";
 import alertify from "alertifyjs";
 import ShowSideNavbar from "@contexts/showSideNavbar";
 import User from "@contexts/user";
@@ -42,7 +42,7 @@ function Registration() {
   }, [user]);
 
   const onSubmit = (data) => {
-    registerService.post(data).then((res) => {
+    authenticationService.register(data).then((res) => {
       if (res) {
         alertify.success(t("registration.page.register.success"));
         history.push("/login");

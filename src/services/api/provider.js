@@ -117,12 +117,12 @@ const get = (resource, id, params = null, secured = false) => {
 
 /** @param {string} resource */
 /** @param {object} model */
-const post = (resource, model, secured = false) => {
+const post = (resource, model, secured = false, config = null) => {
   if (secured) {
     addAuthorizationHeader();
   }
   return instance
-    .post(`${BASE_URL}/${resource}`, model)
+    .post(`${BASE_URL}/${resource}`, model, config)
     .then(handleResponse)
     .catch(handleError);
 };
