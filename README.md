@@ -1,6 +1,6 @@
 # Getting Started with BoilerPlate-React.js
 
-This is a simple Boilerplate for React.js with a simple architecture, sass, breakpoint sass, prettier, ESLINT,  prettier ESLINT, login/register page with jwt token, React Hook Form, React Router, Boostrap v4.6, moment.js, .
+This is a simple Boilerplate for React.js with a simple architecture, sass, breakpoint sass, prettier, ESLINT,  prettier ESLINT, login/register page with jwt token, React Hook Form, React Router, Boostrap v4.6, moment.js, Redux .
 It's a simple architecture for HTTPS calls
 
 ## To install 
@@ -16,7 +16,6 @@ Extensions VScode :
 - facebook and google auth
 - change alertify by that maybe https://github.com/fkhadra/react-toastify
 - Implement SSR
-- add Redux
     
 ## Available Scripts
 
