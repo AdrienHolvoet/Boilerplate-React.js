@@ -56,6 +56,7 @@ const MultiLang = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding: 3px;
   img {
     width: 19px;
     text-transform: lowercase;
@@ -63,8 +64,10 @@ const MultiLang = styled.div`
   span {
     display: none;
 
-    ${media.tablet`display : block`}
+    ${media.tablet`display : block;`}
   }
+
+  ${media.tablet`padding : unset`}
 `;
 
 const CurrentMultiLang = styled(MultiLang)`
