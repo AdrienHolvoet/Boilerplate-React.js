@@ -1,10 +1,7 @@
-import styled from "styled-components";
-import { variables } from "@variable";
-
-const SecondaryButton = ({ title, className, onClick, type }) => {
+const SecondaryButton = ({ title, className, onClick, type, src }) => {
   return (
     <div className="position-relative d-flex align-items-center">
-      <InputButton
+      <input
         onClick={onClick}
         type={`${type ? type : "submit"}`}
         value={title}
@@ -13,17 +10,5 @@ const SecondaryButton = ({ title, className, onClick, type }) => {
     </div>
   );
 };
-
-const InputButton = styled.input`
-  border-radius: 10px;
-  background-color: ${variables.themeColorSecondary};
-  border: 1px solid ${variables.themeColorBlack};
-  border: none;
-  text-transform: uppercase;
-  font-size: 11px;
-  padding: 10px;
-  min-width: 160px;
-  font-weight: bold;
-`;
 
 export default SecondaryButton;

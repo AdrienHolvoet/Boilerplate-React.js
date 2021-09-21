@@ -7,16 +7,11 @@ import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import alertify from "alertifyjs";
 import { addItem } from "@utils/localStorage";
-import { ContentLayout } from "@styles/components/contentLayout";
-import { PageLayout } from "@styles/components/pageLayout";
-import { ErrorMessage } from "@styles/components/errorMessage";
-import styled from "styled-components";
-import { media } from "@styles/bases/media";
-import { variables } from "@styles/bases/variable";
 import { useTranslation } from "react-i18next";
 import { login, setUser } from "./actions";
 import { useDispatch, useSelector } from "react-redux";
 import { setShowSideNavbar } from "../app/actions";
+import "./login.scss";
 
 function Login(props) {
   const { t } = useTranslation();
@@ -64,15 +59,18 @@ function Login(props) {
   };
 
   return (
-    <PageLayout>
+    <section className="page">
       <Header showLoggedUser={false} showMenu={false}>
         {t("login.page.title")}
       </Header>
-      <Wrapper>
-        <img src={logo} alt="logo" />
+      <div className="content login-container">
+        <img className="login-logo" src={logo} alt="logo" />
 
-        <FormWrapper onSubmit={handleSubmit(onSubmit)}>
-          <FormInputWrapper>
+        <Form
+          onSubmit={handleSubmit(onSubmit)}
+          className="login-form d-flex flex-column align-items-center w-100"
+        >
+          <div className="login-input">
             <Form.Control
               {...register("email", { required: true })}
               autoComplete="email"
@@ -80,10 +78,10 @@ function Login(props) {
               placeholder={t("email") + "*"}
             />
             {errors?.username?.type === "required" && (
-              <ErrorMessage>{t("email.required")}</ErrorMessage>
+              <div className="error-message">{t("email.required")}</div>
             )}
-          </FormInputWrapper>
-          <FormInputWrapper>
+          </div>
+          <div className="login-input">
             <Form.Control
               {...register("password", { required: true })}
               autoComplete="current-password"
@@ -92,79 +90,19 @@ function Login(props) {
               id="current-password"
             />
             {errors?.password?.type === "required" && (
-              <ErrorMessage>{t("password.required")}</ErrorMessage>
+              <span className="error-message">{t("password.required")}</span>
             )}
             <Link to="forgot-password">{t("login.page.forgotPassword")}</Link>
-          </FormInputWrapper>
-          <FormSubmit title={t("connection")} />
-          <Text>
+          </div>
+          <PrimaryButton className="login-submit" title={t("connection")} />
+          <span className="login-registration-span">
             {t("login.page.notYetRegister")}
             <Link to="/registration"> {t("registration")}</Link>
-          </Text>
-        </FormWrapper>
-      </Wrapper>
-    </PageLayout>
+          </span>
+        </Form>
+      </div>
+    </section>
   );
 }
-
-const Wrapper = styled(ContentLayout)`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-
-  img {
-    display: block;
-    margin: 0 auto;
-    width: 160px;
-    height: 30%;
-    ${media.tablet`width: 320px;`}
-  }
-`;
-
-const FormWrapper = styled(Form)`
-  max-width: 1400px;
-  margin: 0 auto;
-  height: 70%;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const FormInputWrapper = styled.div`
-  width: 80%;
-  margin: auto;
-  margin: 5px;
-
-  input {
-    height: 60px;
-  }
-
-  a {
-    color: ${variables.themeColorPrimary};
-    font-size: 1em;
-    cursor: pointer;
-    padding-top: 2px;
-    float: right;
-  }
-`;
-
-const FormSubmit = styled(PrimaryButton)`
-  width: 80%;
-  font-size: 15px;
-  padding: 15px;
-  margin-top: 10px;
-`;
-
-const Text = styled.span`
-  padding: 15px 0.5em;
-  a {
-    color: ${variables.themeColorPrimary};
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-  }
-`;
 
 export default Login;

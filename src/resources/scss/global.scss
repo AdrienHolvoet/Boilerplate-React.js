@@ -1,0 +1,208 @@
+@import "./base.module.scss";
+@import "alertifyjs/build/css/alertify.css";
+@import "~bootstrap/scss/bootstrap";
+@import "./alertify.scss";
+
+body {
+  margin: 0;
+  font-family: $font-family !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $background-color !important;
+  height: 100vh;
+}
+
+.overlay {
+  position: fixed; /* Positioning and size */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 2;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+hr {
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
+}
+
+.empty-message {
+  font-weight: bold;
+  font-size: 17px;
+  padding: 2%;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $background-color;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $theme-color-primary;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $theme-color-primary-dark;
+}
+
+.error-message {
+  display: block;
+  padding-top: 5px;
+  padding: 0.25em 0.5em;
+  border-left: 3px solid $error-color;
+  margin-top: 0.25em;
+  background-color: $error-background-color;
+  border-radius: 3px;
+  color: $theme-color-black;
+}
+
+input[type="radio"]:checked:after {
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  top: -3px;
+  left: -1px;
+  position: relative;
+  background-color: $theme-color-primary;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid $theme-color-white;
+}
+
+.dropdown {
+  .btn-primary,
+  .btn-primary:not(:disabled):not(.disabled):active,
+  .btn-primary:not(:disabled):not(.disabled).active,
+  .show > .btn-primary.dropdown-toggle {
+    color: $theme-color-black !important;
+    background-color: $theme-color-primary !important;
+    border-color: $theme-color-primary !important;
+    height: 32px;
+  }
+
+  .btn {
+    padding: 0 0.75rem;
+  }
+
+  .dropdown-toggle::after {
+    vertical-align: 2px;
+  }
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 6px;
+  margin: 13.8px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+  border-radius: 5px;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  background: transparent;
+  border-radius: 1.3px;
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  margin-top: -14px;
+  width: 16px;
+  height: 36px;
+  background: $theme-color-primary;
+  border: 1px solid $theme-color-white;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: transparent;
+}
+input[type="range"]::-moz-range-track {
+  background: transparent;
+  border: 0.2px solid #010101;
+  border-radius: 1.3px;
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 36px;
+  background: $theme-color-primary;
+  border: 1px solid $theme-color-white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+input[type="range"]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 14.8px 0;
+  color: transparent;
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+}
+input[type="range"]::-ms-fill-lower {
+  background: transparent;
+  border-radius: 2.6px;
+}
+input[type="range"]::-ms-fill-upper {
+  background: transparent;
+  border-radius: 2.6px;
+}
+input[type="range"]::-ms-thumb {
+  width: 16px;
+  height: 36px;
+  background: $theme-color-primary;
+  border: 1px solid $theme-color-white;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 0px;
+}
+
+a {
+  color: unset;
+}
+
+a:hover {
+  color: unset;
+  text-decoration: none;
+}
+
+.content {
+  padding: 10px;
+  overflow-y: auto;
+}

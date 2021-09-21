@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import routes from "@routes/routes";
 import { BrowserRouter as Router } from "react-router-dom";
 import { getItem } from "@utils/localStorage";
 import SideNavbar from "@components/navigation/sideNavbar";
 import { NAVIGATION } from "./constants";
 import { useMediaQuery } from "react-responsive";
-import GlobalStyle from "@styles/bases/global.js";
-import { Overlay } from "@styles/components/overlay";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { setUser } from "../loginPage/actions";
 import { useDispatch, useSelector } from "react-redux";
+import "@scss/global.scss";
+import "@components/inputs/inputs.scss";
 
 function App() {
   const showSideNavbar = useSelector((state) => state.app?.showSideNavbar);
@@ -54,9 +54,8 @@ function App() {
 
   return (
     <>
-      <GlobalStyle />
       <Router>
-        <Overlay id="overlay" />
+        <div className="overlay" id="overlay" />
         {showSideNavbar && (
           <SideNavbar refSidebar={refSidebar} routes={NAVIGATION} />
         )}

@@ -1,0 +1,90 @@
+@import "@scss/base.module.scss";
+
+.header {
+  background-color: $theme-color-white;
+  height: $header-heigth;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .back-arrow {
+    position: absolute;
+    left: 15px;
+    cursor: pointer;
+  }
+
+  .menu_hamburger {
+    cursor: pointer;
+    padding-left: 5px;
+    @include breakpoint {
+      display: none;
+    }
+  }
+}
+
+.header-title {
+  margin: auto;
+  font-family: $font-family-heavy;
+  font-size: 25px;
+  @include breakpoint(desktop) {
+    font-size: 2.2rem;
+  }
+}
+
+.header-logged-user {
+  background-color: $theme-color-primary;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  padding-top: 2px;
+  justify-content: center;
+  color: $theme-color-white;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  .popover {
+    box-shadow: 0 24px 54px rgb(0 0 0 / 15%), 0 4.5px 13.5px rgb(0 0 0 / 8%);
+    border: none !important;
+    font-family: $font-family;
+    width: 135px;
+  }
+
+  .popover-body:hover {
+    background-color: $background-color;
+    border-radius: 3px;
+  }
+
+  .popover .arrow::before,
+  .popover .arrow::after {
+    content: none;
+  }
+}
+
+.header-log-in {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 10px;
+  background-color: $theme-color-primary;
+  color: $theme-color-white;
+  font-weight: 600;
+}
+
+.header-log-in:hover {
+  transform: scale(1.1);
+}
+
+.header__logged-user__lang-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 5px;
+}

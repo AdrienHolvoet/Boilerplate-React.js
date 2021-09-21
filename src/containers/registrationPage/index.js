@@ -7,15 +7,10 @@ import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import authenticationService from "@services/authenticationService/authenticationService";
 import alertify from "alertifyjs";
-import { ContentLayout } from "@styles/components/contentLayout";
-import { PageLayout } from "@styles/components/pageLayout";
-import { ErrorMessage } from "@styles/components/errorMessage";
-import styled from "styled-components";
-import { media } from "@media";
-import { variables } from "@variable";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setShowSideNavbar } from "../app/actions";
+import "./registration.scss";
 
 function Registration() {
   const {
@@ -30,8 +25,10 @@ function Registration() {
 
   const { t } = useTranslation();
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    setShow(false);
+    dispatch(setShowSideNavbar(false));
     if (user) {
       history.replace("/");
     }
@@ -52,16 +49,19 @@ function Registration() {
   };
 
   return (
-    <PageLayout>
+    <section className="page">
       <Header showLoggedUser={false} showMenu={false}>
         {t("registration")}
       </Header>
-      <Wrapper>
-        <img src={logo} alt="logo" />
+      <div className="content registration-container">
+        <img className="registration-logo" src={logo} alt="logo" />
 
-        <FormWrapper onSubmit={handleSubmit(onSubmit)}>
-          <FormGroup>
-            <FormInputWrapper>
+        <Form
+          onSubmit={handleSubmit(onSubmit)}
+          className="registration-form d-flex flex-column align-items-center w-100"
+        >
+          <div className="form-group">
+            <div className="registration-input">
               <Form.Control
                 {...register("firstName", {
                   required: true,
@@ -72,18 +72,18 @@ function Registration() {
                 placeholder={t("forename") + "*"}
               />
               {errors?.firstName?.type === "required" && (
-                <ErrorMessage>
+                <div className="error-message">
                   {t("registration.page.forename.required")}
-                </ErrorMessage>
+                </div>
               )}
               {errors?.firstName?.type === "pattern" && (
-                <ErrorMessage>
+                <span className="error-message">
                   {t("registration.page.forename.pattern")}
-                </ErrorMessage>
+                </span>
               )}
-            </FormInputWrapper>
+            </div>
 
-            <FormInputWrapper className="registration-input">
+            <div className="registration-input">
               <Form.Control
                 {...register("lastname", {
                   required: true,
@@ -94,19 +94,19 @@ function Registration() {
                 placeholder={t("name") + "*"}
               />
               {errors?.lastname?.type === "required" && (
-                <ErrorMessage>
+                <div className="error-message">
                   {t("registration.page.name.required")}
-                </ErrorMessage>
+                </div>
               )}
               {errors?.lastname?.type === "pattern" && (
-                <ErrorMessage>
+                <span className="error-message">
                   {t("registration.page.name.pattern")}
-                </ErrorMessage>
+                </span>
               )}
-            </FormInputWrapper>
-          </FormGroup>
-          <FormGroup>
-            <FormInputWrapper>
+            </div>
+          </div>
+          <div className="form-group">
+            <div className="registration-input">
               <Form.Control
                 {...register("username", {
                   required: true,
@@ -119,21 +119,21 @@ function Registration() {
                 placeholder={t("username") + "*"}
               />
               {errors?.username?.type === "required" && (
-                <ErrorMessage>{t("username.required")}</ErrorMessage>
+                <div className="error-message">{t("username.required")}</div>
               )}
               {errors?.username?.type === "pattern" && (
-                <ErrorMessage>
+                <div className="error-message">
                   {t("registration.page.username.pattern")}
-                </ErrorMessage>
+                </div>
               )}
               {(errors?.username?.type === "minLength" ||
                 errors?.username?.type === "maxLength") && (
-                <ErrorMessage>
+                <div className="error-message">
                   {t("registration.page.username.length")}
-                </ErrorMessage>
+                </div>
               )}
-            </FormInputWrapper>
-            <FormInputWrapper>
+            </div>
+            <div className="registration-input">
               <Form.Control
                 {...register("password", {
                   required: true,
@@ -145,16 +145,16 @@ function Registration() {
                 autoComplete="password"
               />
               {errors?.password?.type === "required" && (
-                <ErrorMessage>{t("password.required")}</ErrorMessage>
+                <span className="error-message">{t("password.required")}</span>
               )}
               {errors?.password?.type === "pattern" && (
-                <ErrorMessage>
+                <span className="error-message">
                   {t("registration.page.password.pattern")}
-                </ErrorMessage>
+                </span>
               )}
-            </FormInputWrapper>
-          </FormGroup>
-          <FormInputWrapper>
+            </div>
+          </div>
+          <div className="registration-input">
             <Form.Control
               {...register("email", { required: true })}
               autoComplete="email"
@@ -162,85 +162,23 @@ function Registration() {
               placeholder={t("email") + "*"}
             />
             {errors?.email?.type === "required" && (
-              <ErrorMessage>
+              <div className="error-message">
                 {t("registration.page.email.required")}
-              </ErrorMessage>
+              </div>
             )}
-          </FormInputWrapper>
-          <FormSubmit title={t("register")} />
-          <Text>
+          </div>
+          <PrimaryButton
+            className="registration-submit"
+            title={t("register")}
+          />
+          <span className="registration-login-span">
             {t("registration.page.alreadyRegister")}
             <Link to="/login">{t("registration.page.goToLogin")}</Link>
-          </Text>
-        </FormWrapper>
-      </Wrapper>
-    </PageLayout>
+          </span>
+        </Form>
+      </div>
+    </section>
   );
 }
-
-const Wrapper = styled(ContentLayout)`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-
-  img {
-    display: block;
-    margin: 0 auto;
-    width: 160px;
-    height: 30%;
-    ${media.tablet`width: 320px;`}
-  }
-`;
-
-const FormWrapper = styled(Form)`
-  max-width: 1400px;
-  margin: 0 auto;
-  height: 70%;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const FormGroup = styled.div`
-  display: flex;
-  width: 81%;
-`;
-
-const FormInputWrapper = styled.div`
-  width: 80%;
-  margin: auto;
-  margin: 5px;
-
-  input {
-    height: 60px;
-  }
-
-  a {
-    color: ${variables.themeColorPrimary};
-    font-size: 1em;
-    cursor: pointer;
-    padding-top: 2px;
-    float: right;
-  }
-`;
-
-const FormSubmit = styled(PrimaryButton)`
-  width: 80%;
-  font-size: 15px;
-  padding: 15px;
-  margin-top: 10px;
-`;
-
-const Text = styled.span`
-  padding: 15px 0.5em;
-  a {
-    color: ${variables.themeColorPrimary};
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-  }
-`;
 
 export default Registration;

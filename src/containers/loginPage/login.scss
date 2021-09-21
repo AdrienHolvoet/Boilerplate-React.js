@@ -1,0 +1,62 @@
+@import "@scss/base.module.scss";
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+.content {
+  background-color: "red";
+}
+.login-logo {
+  display: block;
+  margin: 0 auto;
+  width: 160px;
+  height: 30%;
+
+  @include breakpoint(desktop) {
+    width: 320px;
+  }
+}
+
+.login-form {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 70%;
+}
+
+.login-input {
+  width: 80%;
+  margin: auto;
+  margin: 5px;
+
+  input {
+    height: 60px;
+  }
+
+  a {
+    color: $theme-color-primary;
+    font-size: 1em;
+    cursor: pointer;
+    padding-top: 2px;
+    float: right;
+  }
+}
+
+.login-submit {
+  width: 80%;
+  padding: 15px !important;
+  margin-top: 10px;
+  font-size: 14px !important;
+}
+
+.login-registration-span {
+  padding: 15px 0.5em;
+  a {
+    color: $theme-color-primary;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

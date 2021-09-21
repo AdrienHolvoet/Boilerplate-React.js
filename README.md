@@ -16,6 +16,7 @@ Extensions VScode :
 - facebook and google auth
 - change alertify by that maybe https://github.com/fkhadra/react-toastify
 - Implement SSR
+- Remove boostrap
     
 ## Available Scripts
 

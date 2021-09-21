@@ -1,15 +1,14 @@
 import Header from "@components/header/header";
-import { ContentLayout } from "@styles/components/contentLayout";
-import { PageLayout } from "@styles/components/pageLayout";
-import H1 from "@components/titles/h1";
 import { useTranslation } from "react-i18next";
+import H1 from "@components/titles/h1";
+import "./home.scss";
 
 function Home() {
   const { t } = useTranslation();
   return (
-    <PageLayout>
+    <section className="page">
       <Header>{t("home.page.title")}</Header>
-      <ContentLayout>
+      <div className="content">
         <H1> {t("home.page.title")}</H1>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero
         tellus, faucibus vel ullamcorper vitae, ultricies fringilla orci.
@@ -48,8 +47,8 @@ function Home() {
         malesuada eu porttitor vitae, malesuada eget nunc. Cras efficitur eget
         nunc ac porta. Mauris quis facilisis mi. Nullam condimentum neque non
         velit aliquam, et viverra eros congue.
-      </ContentLayout>
-    </PageLayout>
+      </div>
+    </section>
   );
 }
 

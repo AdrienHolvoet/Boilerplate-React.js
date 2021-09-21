@@ -2,10 +2,8 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from "@images/logo.svg";
 import { useMediaQuery } from "react-responsive";
-import styled from "styled-components";
-import { variables } from "@variable";
-import { media } from "@media";
 import { useTranslation } from "react-i18next";
+import "./navigation.scss";
 
 const SideNavbar = ({ routes, refSidebar }) => {
   const { t } = useTranslation();
@@ -19,75 +17,27 @@ const SideNavbar = ({ routes, refSidebar }) => {
     }
   };
   return (
-    <SideNavbarWrapper ref={refSidebar} id="sidenavbar">
-      <NavHeader>
+    <section ref={refSidebar} id="sidenavbar" className="sidenavbar">
+      <header className="nav-header">
         <Link to="/" onClick={onClickLink}>
           <img src={logo} alt="logo" />
         </Link>
-      </NavHeader>
-      <Wrapper>
+      </header>
+      <div className="sidenavbar-container">
         {routes?.map((route, index) => (
-          <Item key={index} exact to={route.url} onClick={onClickLink}>
+          <NavLink
+            key={index}
+            className="sidenavbar-item"
+            exact
+            to={route.url}
+            onClick={onClickLink}
+          >
             {t(route.name)}
-          </Item>
+          </NavLink>
         ))}
-      </Wrapper>
-    </SideNavbarWrapper>
+      </div>
+    </section>
   );
 };
-
-const SideNavbarWrapper = styled.section`
-  height: 100%;
-  background-color: ${variables.themeColorWhite};
-  font-weight: bold;
-  width: 0;
-  z-index: 999;
-  position: absolute;
-  transition: all 0.3s linear;
-  transform-origin: 1px;
-  overflow-x: hidden;
-
-  ${media.tablet`
-  display: unset;
-  width: 25%;
-  position: sticky;
-  top: 0;`}
-`;
-
-const NavHeader = styled.header`
-  cursor: pointer;
-  height: ${variables.headerHeigth};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Wrapper = styled.div`
-  border-top: 3px solid ${variables.backgroundColor};
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-
-  .active {
-    background-color: ${variables.themeColorPrimary};
-    color: ${variables.themeColorWhite};
-  }
-
-  .active:hover {
-    background-color: ${variables.themeColorPrimary};
-    color: ${variables.themeColorWhite};
-  }
-`;
-
-const Item = styled(NavLink)`
-  margin: 6px;
-  padding: 9px;
-  border-radius: 5px;
-
-  &:hover {
-    color: ${variables.themeColorBlack};
-    background-color: ${variables.backgroundColor};
-  }
-`;
 
 export default SideNavbar;
