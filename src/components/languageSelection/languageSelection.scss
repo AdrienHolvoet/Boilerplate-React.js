@@ -1,0 +1,54 @@
+@import "@scss/base.module.scss";
+
+.language-select-container {
+  text-transform: uppercase;
+  margin-right: 5px;
+
+  .language-select-container-lang {
+    color: $theme-color-white;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3px;
+    img {
+      width: 19px;
+      text-transform: lowercase;
+    }
+    span {
+      display: none;
+
+      @include breakpoint {
+        display: block;
+      }
+    }
+    @include breakpoint {
+      padding: unset;
+    }
+  }
+
+  .language-select-container-current-lang {
+    background: $theme-color-primary;
+    border-radius: 5px;
+    width: 40px;
+    padding: 5px;
+    @include breakpoint {
+      width: 70px;
+      padding: 3px;
+    }
+  }
+
+  .language-select-container-dropdown {
+    margin-top: 2px;
+    border-radius: 5px !important;
+    background: $theme-color-primary;
+    color: $theme-color-white;
+    position: absolute;
+    width: 40px;
+
+    @include breakpoint {
+      width: 70px;
+    }
+  }
+}

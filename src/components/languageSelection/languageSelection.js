@@ -1,9 +1,7 @@
-import { useTranslation } from "react-i18next";
-import styled from "styled-components";
-import { SUPPORTED_LANGUAGES } from "./constant";
-import { variables } from "@variable";
 import { useState } from "react";
-import { media } from "@media";
+import { useTranslation } from "react-i18next";
+import { SUPPORTED_LANGUAGES } from "./constant";
+import "./languageSelection.scss";
 
 function LanguageSelection() {
   const { t, i18n } = useTranslation();
@@ -23,69 +21,29 @@ function LanguageSelection() {
   };
 
   return (
-    <Wrapper>
-      <CurrentMultiLang onClick={() => setShowDropdown(!showDropdown)}>
+    <div className="language-select-container">
+      <div
+        className="language-select-container-lang language-select-container-current-lang"
+        onClick={() => setShowDropdown(!showDropdown)}
+      >
         {getImageFlag(i18n.language)}
         <span>{i18n.language.substring(0, 2)}</span>
-      </CurrentMultiLang>
-      <Dropdown>
+      </div>
+      <div className="language-select-container-dropdown">
         {SUPPORTED_LANGUAGES.map((lang, index) => (
-          <MultiLang
+          <div
             key={index}
-            className={`${showDropdown ? "" : "d-none"}`}
+            className={`language-select-container-lang ${
+              showDropdown ? "" : "d-none"
+            }`}
             onClick={() => changeLanguageHandler(lang)}
           >
             {getImageFlag(lang)}
             <span>{t(lang).substring(0, 2)}</span>
-          </MultiLang>
+          </div>
         ))}
-      </Dropdown>
-    </Wrapper>
+      </div>
+    </div>
   );
 }
-
-const Wrapper = styled.div`
-  text-transform: uppercase;
-  margin-right: 5px;
-`;
-
-const MultiLang = styled.div`
-  color: ${variables.themeColorWhite};
-  cursor: pointer;
-  font-size: 18px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 3px;
-  img {
-    width: 19px;
-    text-transform: lowercase;
-  }
-  span {
-    display: none;
-
-    ${media.tablet`display : block;`}
-  }
-
-  ${media.tablet`padding : unset`}
-`;
-
-const CurrentMultiLang = styled(MultiLang)`
-  background: ${variables.themeColorPrimary};
-  border-radius: 5px;
-  width: 40px;
-  padding: 5px;
-  ${media.tablet`width: 70px;  padding: 3px;`};
-`;
-
-const Dropdown = styled.div`
-  margin-top: 2px;
-  border-radius: 5px !important;
-  background: ${variables.themeColorPrimary};
-  color: ${variables.themeColorWhite};
-  position: absolute;
-  width: 40px;
-
-  ${media.tablet` width: 70px;`};
-`;
 export default LanguageSelection;

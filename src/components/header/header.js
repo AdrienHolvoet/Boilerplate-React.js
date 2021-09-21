@@ -1,23 +1,15 @@
 import { useState, useRef } from "react";
 import { Popover, Overlay } from "react-bootstrap";
 import { removeItem } from "@utils/localStorage";
-import return_arrow from "@images/arrow_back_black_24dp.svg";
 import menu_hamburger from "@images/menu_hamburger.svg";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { variables } from "@variable";
-import { media } from "@media";
 import LanguageSelection from "../languageSelection/languageSelection";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { unsetUser } from "../../containers/loginPage/actions";
+import { unsetUser } from "@containers/loginPage/actions";
+import "./header.scss";
 
-const Header = ({
-  children,
-  showLoggedUser = true,
-  showMenu = true,
-  returnPath,
-}) => {
+const Header = ({ children, showLoggedUser = true, showMenu = true }) => {
   const user = useSelector((state) => state.user);
 
   const [show, setShow] = useState(false);
@@ -47,24 +39,19 @@ const Header = ({
   };
 
   return (
-    <Wrapper>
-      {returnPath && (
-        <BackArrow to={returnPath}>
-          <img src={return_arrow} alt="back arrow" />
-        </BackArrow>
-      )}
+    <header className="header">
       {showMenu && (
-        <Hamburger onClick={showSideNavbar}>
+        <div className="menu_hamburger" onClick={showSideNavbar}>
           <img src={menu_hamburger} alt="Menu" />
-        </Hamburger>
+        </div>
       )}
 
-      <Title>{children}</Title>
-      <WrapperUserAndLang>
+      <h1 className="header-title">{children}</h1>
+      <div className="header__logged-user__lang-container">
         <LanguageSelection />
         {showLoggedUser &&
           (user ? (
-            <LoggedUser ref={ref} onClick={handleClick}>
+            <div className="header-logged-user" ref={ref} onClick={handleClick}>
               {user &&
                 user.firstName.substring(0, 1) + user.lastName.substring(0, 1)}
               <Overlay
@@ -83,101 +70,15 @@ const Header = ({
                   </Popover.Content>
                 </Popover>
               </Overlay>
-            </LoggedUser>
+            </div>
           ) : (
-            <UserLogIn>
+            <div className="header-log-in">
               <Link to="/login"> {t("login.page.title")}</Link>
-            </UserLogIn>
+            </div>
           ))}
-      </WrapperUserAndLang>
-    </Wrapper>
+      </div>
+    </header>
   );
 };
 
-const WrapperUserAndLang = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 5px;
-`;
-const Wrapper = styled.div`
-  background-color: ${variables.themeColorWhite};
-  height: ${variables.headerHeigth};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
-
-const BackArrow = styled(Link)`
-  position: absolute;
-  left: 15px;
-  cursor: pointer;
-`;
-
-const Hamburger = styled.div`
-  cursor: pointer;
-  position: absolute;
-  left: 25px;
-  cursor: pointer;
-`;
-
-const Title = styled.h1`
-  font-family: ${variables.fontFamilyHeavy};
-  font-size: 25px;
-  ${media.tablet`font-size : 2.2em`}
-`;
-
-const LoggedUser = styled.div`
-  background-color: ${variables.themeColorPrimary};
-  height: 48px;
-  width: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  padding-top: 2px;
-  justify-content: center;
-  color: ${variables.themeColorWhite};
-  font-weight: bold;
-  cursor: pointer;
-  right: 5px;
-  text-transform: uppercase;
-  cursor: pointer;
-
-  .popover {
-    box-shadow: 0 24px 54px rgb(0 0 0 / 15%), 0 4.5px 13.5px rgb(0 0 0 / 8%);
-    border: none !important;
-    font-family: ${variables.fontFamily};
-    width: 135px;
-  }
-
-  .popover-body:hover {
-    background-color: ${variables.backgroundColor};
-    border-radius: 3px;
-  }
-
-  .popover .arrow::before,
-  .popover .arrow::after {
-    content: none;
-  }
-`;
-
-const UserLogIn = styled.div`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 7px;
-  border-radius: 10px;
-  background-color: ${variables.themeColorPrimary};
-  color: ${variables.themeColorWhite};
-  font-weight: 600;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
 export default Header;

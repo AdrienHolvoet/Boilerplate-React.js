@@ -1,0 +1,33 @@
+@import "@scss/base.module.scss";
+
+.not_found-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    text-decoration: underline;
+    color: $theme-color-primary;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    @include breakpoint {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+    }
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 200;
+    @include breakpoint {
+      font-size: 1.75rem;
+    }
+  }
+
+  span {
+    text-align: left;
+  }
+}

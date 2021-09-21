@@ -4,18 +4,16 @@ import CustomRadio from "@components/inputs/customRadio";
 import CustomRange from "@components/inputs/customRange";
 import CustomSwitch from "@components/inputs/customSwitch";
 import PrimaryButton from "@components/inputs/primaryButton";
-import { ContentLayout } from "@styles/components/contentLayout";
-import { PageLayout } from "@styles/components/pageLayout";
 import { useTranslation } from "react-i18next";
 
-import "./style.js";
+import "./about.scss";
 
 function About() {
   const { t } = useTranslation();
   return (
-    <PageLayout>
+    <section className="page">
       <Header>{t("about.page.title")}</Header>
-      <ContentLayout>
+      <div className="content">
         <PrimaryButton title={t("about.page.input.label")}></PrimaryButton>
         <CustomCheckbox label="test" onChange={() => {}}></CustomCheckbox>
         <CustomRange value={70}></CustomRange>
@@ -28,8 +26,8 @@ function About() {
           </CustomRadio>
         </div>
         <CustomSwitch id="idSwitch" label="switch" />
-      </ContentLayout>
-    </PageLayout>
+      </div>
+    </section>
   );
 }
 

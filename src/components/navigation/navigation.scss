@@ -1,0 +1,56 @@
+@import "@scss/base.module.scss";
+
+.sidenavbar {
+  height: 100%;
+  background-color: $theme-color-white;
+  font-weight: bold;
+  width: 0;
+  z-index: 999;
+  position: absolute;
+  transition: all 0.3s linear;
+  transform-origin: 1px;
+  overflow-x: hidden;
+
+  @include breakpoint {
+    display: unset;
+    width: 25%;
+    position: sticky;
+    top: 0;
+  }
+
+  .nav-header {
+    cursor: pointer;
+    height: $header-heigth;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sidenavbar-container {
+    border-top: 3px solid $background-color;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .active {
+    background-color: $theme-color-primary !important;
+    color: $theme-color-white !important;
+  }
+
+  .active:hover {
+    background-color: $theme-color-primary;
+    color: $theme-color-white;
+  }
+
+  .sidenavbar-item {
+    margin: 6px;
+    padding: 9px;
+    border-radius: 5px;
+  }
+
+  .sidenavbar-item:hover {
+    color: $theme-color-black;
+    background-color: $background-color;
+  }
+}

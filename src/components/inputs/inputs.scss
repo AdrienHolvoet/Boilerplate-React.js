@@ -1,0 +1,302 @@
+@import "@scss/base.module.scss";
+
+.primary-button {
+  background-color: $theme-color-primary;
+  color: $theme-color-white;
+  border: none;
+  text-transform: uppercase;
+  font-size: 11px;
+  padding: 10px;
+  min-width: 160px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.secondary-button {
+  background-color: $theme-color-secondary;
+  border: 1px solid $theme-color-black;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 11px;
+  min-width: 160px;
+  font-weight: bold;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: $theme-color-white;
+  box-shadow: 0 0 20px rgb(25 25 25 / 15%);
+  border-radius: 2px;
+  border: 1px solid $theme-color-primary-light;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: $theme-color-primary;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 8px;
+  top: 4px;
+  width: 7px;
+  height: 12px;
+  border: solid $theme-color-white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.custom-radio-container {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  margin-right: 0.75rem;
+  position: relative;
+
+  input[type="radio"]:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 19px;
+    top: -3px;
+    left: -1px;
+    position: relative;
+    background-color: $theme-color-primary;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+  input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  .custom-radio__label {
+    margin-bottom: 0;
+  }
+
+  .custom-radio__input {
+    position: static;
+    margin-top: 0;
+    margin-right: 0.3125rem;
+    margin-left: 0;
+  }
+}
+
+.input-range-container {
+  input[type="range"] {
+    width: 100%;
+    height: 6px;
+    margin: 13.8px 0;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    width: 300px;
+  }
+
+  input[type="range"]:focus {
+    outline: none;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    background: transparent;
+    border-radius: 1.3px;
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    margin-top: -14px;
+    width: 16px;
+    height: 36px;
+    background: $theme-color-primary;
+    border: 1px solid $theme-color-white;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+
+  input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: transparent;
+  }
+
+  input[type="range"]::-moz-range-track {
+    background: transparent;
+    border: 0.2px solid $theme-color-primary;
+    border-radius: 1.3px;
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 36px;
+    background: $theme-color-primary;
+    border: 1px solid $theme-color-white;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    border-width: 14.8px 0;
+    color: transparent;
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-ms-fill-lower {
+    background: transparent;
+    border-radius: 2.6px;
+  }
+
+  input[type="range"]::-ms-fill-upper {
+    background: transparent;
+    border-radius: 2.6px;
+  }
+
+  input[type="range"]::-ms-thumb {
+    width: 16px;
+    height: 36px;
+    background: $theme-color-primary;
+    border: 1px solid $theme-color-white;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 0px;
+  }
+}
+
+.custom-switch-container {
+  .custom-control {
+    position: relative;
+    z-index: 1;
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5rem;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  .custom-switch {
+    padding-left: 2.25rem;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label::before {
+    border-color: $theme-color-primary;
+    background-color: $theme-color-primary;
+  }
+
+  .custom-switch .custom-control-label::before {
+    left: -2.25rem;
+    width: 1.7rem;
+    pointer-events: all;
+    border-radius: 0.5rem;
+  }
+
+  .custom-control-label::before,
+  .custom-file-label,
+  .custom-select {
+    transition: background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .custom-control-label::before {
+    position: absolute;
+    top: 0.25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 14px;
+    pointer-events: none;
+    content: "";
+    background-color: $theme-color-white;
+    border: #adb5bd solid 1px;
+  }
+
+  .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+    background-color: $theme-color-white;
+    transform: translateX(0.75rem);
+  }
+
+  .custom-switch .custom-control-label::after {
+    top: calc(0.25rem + 1px);
+    left: calc(-2.25rem + 2px);
+    width: calc(1rem - 4px);
+    height: calc(1rem - 4px);
+    background-color: #adb5bd;
+    border-radius: 0.5rem;
+    transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .custom-control-label::after {
+    position: absolute;
+    top: 0.25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 14px;
+    content: "";
+    background: 50%/50% 50% no-repeat;
+  }
+
+  .custom-control-label {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+  }
+
+  .custom-control-input {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 1rem;
+    height: 1.25rem;
+    opacity: 0;
+  }
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  border-color: $theme-color-primary;
+  background-color: $theme-color-primary;
+}
