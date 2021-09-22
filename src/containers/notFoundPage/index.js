@@ -9,16 +9,14 @@ function NotFoundPage() {
   return (
     <section className="page">
       <Header>{t("error")}</Header>
-      <div className="not_found-container content">
-        <div className="text-center">
-          <h1>{t("notFound.page.info")}</h1>
-          <h2>
-            {t("notFound.page.returnHome")}
-            <Link to="/">{t("notFound.page.clickHere")}</Link>
-          </h2>
-          <hr />
-          <span className="text-secondary">{t("error")} 404</span>
-        </div>
+      <div className="not_found-container">
+        <h1>{t("notFound.page.info")}</h1>
+        <h2>
+          {t("notFound.page.returnHome")}
+          <Link to="/">{t("notFound.page.clickHere")}</Link>
+        </h2>
+        <hr />
+        <span>{t("error")} 404</span>
       </div>
     </section>
   );

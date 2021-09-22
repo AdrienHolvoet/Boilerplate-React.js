@@ -1,6 +1,5 @@
 @import "./base.module.scss";
 @import "alertifyjs/build/css/alertify.css";
-@import "~bootstrap/scss/bootstrap";
 @import "./alertify.scss";
 
 body {
@@ -195,6 +194,7 @@ input[type="range"]::-ms-thumb {
 
 a {
   color: unset;
+  text-decoration: unset;
 }
 
 a:hover {
@@ -205,4 +205,37 @@ a:hover {
 .content {
   padding: 10px;
   overflow-y: auto;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 2rem 0.705rem;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: 400;
+
+  color: $warning-color;
+  background-color: $theme-color-white;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  background-color: $theme-color-white;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
 }

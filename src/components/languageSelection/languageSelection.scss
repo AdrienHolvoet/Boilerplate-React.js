@@ -31,10 +31,11 @@
   .language-select-container-current-lang {
     background: $theme-color-primary;
     border-radius: 5px;
-    width: 40px;
+    width: 30px;
     padding: 5px;
+
     @include breakpoint {
-      width: 70px;
+      width: 65px;
       padding: 3px;
     }
   }

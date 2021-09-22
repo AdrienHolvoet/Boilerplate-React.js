@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Form } from "react-bootstrap";
 import Header from "@components/header/header";
 import PrimaryButton from "@components/inputs/primaryButton";
 import logo from "@images/logo.svg";
@@ -56,13 +55,11 @@ function Registration() {
       <div className="content registration-container">
         <img className="registration-logo" src={logo} alt="logo" />
 
-        <Form
-          onSubmit={handleSubmit(onSubmit)}
-          className="registration-form d-flex flex-column align-items-center w-100"
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className="registration-form">
           <div className="form-group">
             <div className="registration-input">
-              <Form.Control
+              <input
+                className="form-control"
                 {...register("firstName", {
                   required: true,
                   pattern: /^[A-Za-z-éè ]+$/i,
@@ -84,7 +81,8 @@ function Registration() {
             </div>
 
             <div className="registration-input">
-              <Form.Control
+              <input
+                className="form-control"
                 {...register("lastname", {
                   required: true,
                   pattern: /^[A-Za-z-éè ]+$/i,
@@ -107,7 +105,8 @@ function Registration() {
           </div>
           <div className="form-group">
             <div className="registration-input">
-              <Form.Control
+              <input
+                className="form-control"
                 {...register("username", {
                   required: true,
                   pattern: /^(?=[a-zA-Z0-9._-àéèç@ -]+$)/,
@@ -134,7 +133,8 @@ function Registration() {
               )}
             </div>
             <div className="registration-input">
-              <Form.Control
+              <input
+                className="form-control"
                 {...register("password", {
                   required: true,
                   pattern: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,25}/g,
@@ -155,7 +155,8 @@ function Registration() {
             </div>
           </div>
           <div className="registration-input">
-            <Form.Control
+            <input
+              className="form-control"
               {...register("email", { required: true })}
               autoComplete="email"
               type="email"
@@ -175,7 +176,7 @@ function Registration() {
             {t("registration.page.alreadyRegister")}
             <Link to="/login">{t("registration.page.goToLogin")}</Link>
           </span>
-        </Form>
+        </form>
       </div>
     </section>
   );

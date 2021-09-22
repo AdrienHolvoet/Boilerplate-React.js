@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Form } from "react-bootstrap";
+
 import Header from "@components/header/header";
 import PrimaryButton from "@components/inputs/primaryButton";
 import logo from "@images/logo.svg";
@@ -66,12 +66,10 @@ function Login(props) {
       <div className="content login-container">
         <img className="login-logo" src={logo} alt="logo" />
 
-        <Form
-          onSubmit={handleSubmit(onSubmit)}
-          className="login-form d-flex flex-column align-items-center w-100"
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className="login-form">
           <div className="login-input">
-            <Form.Control
+            <input
+              className="form-control"
               {...register("email", { required: true })}
               autoComplete="email"
               type="text"
@@ -82,7 +80,8 @@ function Login(props) {
             )}
           </div>
           <div className="login-input">
-            <Form.Control
+            <input
+              className="form-control"
               {...register("password", { required: true })}
               autoComplete="current-password"
               type="password"
@@ -99,7 +98,7 @@ function Login(props) {
             {t("login.page.notYetRegister")}
             <Link to="/registration"> {t("registration")}</Link>
           </span>
-        </Form>
+        </form>
       </div>
     </section>
   );

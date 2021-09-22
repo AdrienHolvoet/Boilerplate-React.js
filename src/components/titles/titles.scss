@@ -1,20 +1,26 @@
 @import "@scss/base.module.scss";
 
-.title-h1 {
-  font-size: 17px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin: 0;
-  padding: 0;
-  color: grey;
-  font-family: "Boston";
-}
-.line-block {
-  display: inline-flex;
-  width: 40px;
-  height: 5px;
-  background-color: transparent;
-  border-bottom: 1px solid grey;
-  margin-right: 20px;
-  padding-bottom: 10px;
+.h1-container {
+  display: flex;
+  margin: 5px;
+
+  .title-h1 {
+    font-weight: 100;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 0;
+    color: grey;
+    font-family: "Boston";
+  }
+  .line-block {
+    display: inline-flex;
+    width: 40px;
+    height: 5px;
+    background-color: transparent;
+    border-bottom: 1px solid grey;
+    margin-right: 20px;
+    padding-bottom: 10px;
+  }
 }
