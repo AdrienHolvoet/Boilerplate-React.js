@@ -7,7 +7,7 @@ const PrimaryButton = ({ disabled, title, className, onClick, onChange }) => {
         onClick={onClick}
         type="submit"
         value={title}
-        className={`primary-button ${className ? className : ""}`}
+        className={`btn primary-button ${className ? className : ""}`}
       />
     </>
   );

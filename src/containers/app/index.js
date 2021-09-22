@@ -5,7 +5,6 @@ import { getItem } from "@utils/localStorage";
 import SideNavbar from "@components/navigation/sideNavbar";
 import { NAVIGATION } from "./constants";
 import { useMediaQuery } from "react-responsive";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { setUser } from "../loginPage/actions";
 import { useDispatch, useSelector } from "react-redux";
 import "@scss/global.scss";

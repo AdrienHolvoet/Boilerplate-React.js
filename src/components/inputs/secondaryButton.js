@@ -1,13 +1,13 @@
-const SecondaryButton = ({ title, className, onClick, type, src }) => {
+const SecondaryButton = ({ title, className, onClick, type }) => {
   return (
-    <div className="position-relative d-flex align-items-center">
+    <>
       <input
         onClick={onClick}
         type={`${type ? type : "submit"}`}
         value={title}
-        className={`w-100 btn secondary-button ${className ? className : ""}`}
+        className={`btn secondary-button ${className ? className : ""}`}
       />
-    </div>
+    </>
   );
 };
 

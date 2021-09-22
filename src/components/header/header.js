@@ -1,34 +1,25 @@
 import { useState, useRef } from "react";
-import { Popover, Overlay } from "react-bootstrap";
-import { removeItem } from "@utils/localStorage";
+
 import menu_hamburger from "@images/menu_hamburger.svg";
 import { Link } from "react-router-dom";
 import LanguageSelection from "../languageSelection/languageSelection";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { unsetUser } from "@containers/loginPage/actions";
 import "./header.scss";
+import UserMenu from "./userMenu";
 
 const Header = ({ children, showLoggedUser = true, showMenu = true }) => {
   const user = useSelector((state) => state.user);
 
-  const [show, setShow] = useState(false);
-  const [target, setTarget] = useState(null);
+  const [showUserMenu, setShowUserMenu] = useState(false);
 
   const ref = useRef(null);
 
   const { t } = useTranslation();
 
-  const dispatch = useDispatch();
-
-  const handleClick = (event) => {
-    setShow(!show);
-    setTarget(event.target);
-  };
-
-  const logOffUser = () => {
-    dispatch(unsetUser());
-    removeItem("user");
+  const handleClick = () => {
+    setShowUserMenu(!showUserMenu);
   };
 
   const showSideNavbar = () => {
@@ -54,7 +45,9 @@ const Header = ({ children, showLoggedUser = true, showMenu = true }) => {
             <div className="header-logged-user" ref={ref} onClick={handleClick}>
               {user &&
                 user.firstName.substring(0, 1) + user.lastName.substring(0, 1)}
-              <Overlay
+              {showUserMenu && <UserMenu />}
+
+              {/*  <Overlay
                 show={show}
                 arrowProps={null}
                 target={target}
@@ -69,7 +62,7 @@ const Header = ({ children, showLoggedUser = true, showMenu = true }) => {
                     {t("header.label.disconnect")}
                   </Popover.Content>
                 </Popover>
-              </Overlay>
+              </Overlay> */}
             </div>
           ) : (
             <div className="header-log-in">

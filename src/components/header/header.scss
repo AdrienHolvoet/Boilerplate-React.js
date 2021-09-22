@@ -8,12 +8,6 @@
   justify-content: space-between;
   width: 100%;
 
-  .back-arrow {
-    position: absolute;
-    left: 15px;
-    cursor: pointer;
-  }
-
   .menu_hamburger {
     cursor: pointer;
     padding-left: 5px;
@@ -43,27 +37,29 @@
   justify-content: center;
   color: $theme-color-white;
   font-weight: bold;
-  cursor: pointer;
-  position: absolute;
-  right: 5px;
   text-transform: uppercase;
   cursor: pointer;
 
   .popover {
-    box-shadow: 0 24px 54px rgb(0 0 0 / 15%), 0 4.5px 13.5px rgb(0 0 0 / 8%);
     border: none !important;
-    font-family: $font-family;
-    width: 135px;
-  }
+    position: absolute;
+    top: $header-heigth;
+    right: 8px;
+    text-transform: lowercase;
+    color: $theme-color-black;
+    border-radius: 5px;
+    width: 138px;
 
-  .popover-body:hover {
-    background-color: $background-color;
-    border-radius: 3px;
-  }
+    .popover-label--disconnect {
+      font-weight: 100;
+      padding: 16px 14px;
+      background-color: $theme-color-white;
+      border-radius: 5px;
+    }
 
-  .popover .arrow::before,
-  .popover .arrow::after {
-    content: none;
+    .popover-label--disconnect:hover {
+      background-color: $background-color;
+    }
   }
 }
 
