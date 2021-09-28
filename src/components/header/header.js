@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import LanguageSelection from "../languageSelection/languageSelection";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { unsetUser } from "@containers/loginPage/actions";
-import "./header.scss";
 import UserMenu from "./userMenu";
 
 const Header = ({ children, showLoggedUser = true, showMenu = true }) => {
@@ -46,23 +44,6 @@ const Header = ({ children, showLoggedUser = true, showMenu = true }) => {
               {user &&
                 user.firstName.substring(0, 1) + user.lastName.substring(0, 1)}
               {showUserMenu && <UserMenu />}
-
-              {/*  <Overlay
-                show={show}
-                arrowProps={null}
-                target={target}
-                placement="bottom"
-                container={ref.current}
-                onHide={() => setShow(false)}
-                rootClose={true}
-                transition={false}
-              >
-                <Popover id="popover-contained">
-                  <Popover.Content onClick={logOffUser}>
-                    {t("header.label.disconnect")}
-                  </Popover.Content>
-                </Popover>
-              </Overlay> */}
             </div>
           ) : (
             <div className="header-log-in">

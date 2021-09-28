@@ -1,6 +1,17 @@
-@import "./base.module.scss";
+@import "./base.scss";
 @import "alertifyjs/build/css/alertify.css";
 @import "./alertify.scss";
+@import "@containers/registrationPage/registration";
+@import "@containers/notFoundPage/notFound";
+@import "@containers/loginPage/login";
+@import "@containers/homePage/home";
+@import "@containers/aboutPage/about";
+@import "@components/inputs/inputs";
+@import "@components/titles/titles";
+@import "@components/navigation/navigation";
+@import "@components/languageSelection/languageSelection";
+@import "@components/header/header";
+
 
 body {
   margin: 0;

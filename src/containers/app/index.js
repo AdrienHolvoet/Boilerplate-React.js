@@ -7,8 +7,7 @@ import { NAVIGATION } from "./constants";
 import { useMediaQuery } from "react-responsive";
 import { setUser } from "../loginPage/actions";
 import { useDispatch, useSelector } from "react-redux";
-import "@scss/global.scss";
-import "@components/inputs/inputs.scss";
+import "@scss/main.scss";
 
 function App() {
   const showSideNavbar = useSelector((state) => state.app?.showSideNavbar);

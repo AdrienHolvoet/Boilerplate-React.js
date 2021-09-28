@@ -6,8 +6,6 @@ import CustomSwitch from "@components/inputs/customSwitch";
 import PrimaryButton from "@components/inputs/primaryButton";
 import { useTranslation } from "react-i18next";
 
-import "./about.scss";
-
 function About() {
   const { t } = useTranslation();
   return (

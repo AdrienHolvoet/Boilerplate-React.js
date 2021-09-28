@@ -1,7 +1,6 @@
 import Header from "@components/header/header";
 import { useTranslation } from "react-i18next";
 import H1 from "@components/titles/h1";
-import "./home.scss";
 
 function Home() {
   const { t } = useTranslation();

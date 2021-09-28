@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "@components/header/header";
 import { useTranslation } from "react-i18next";
-import "./notFound.scss";
 
 function NotFoundPage() {
   const { t } = useTranslation();

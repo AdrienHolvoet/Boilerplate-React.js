@@ -1,5 +1,4 @@
 import React from "react";
-import "./titles.scss";
 
 const H1 = (props) => {
   return (

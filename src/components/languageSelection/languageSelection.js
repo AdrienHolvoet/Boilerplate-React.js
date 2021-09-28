@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { SUPPORTED_LANGUAGES } from "./constant";
-import "./languageSelection.scss";
 
 function LanguageSelection() {
   const { t, i18n } = useTranslation();

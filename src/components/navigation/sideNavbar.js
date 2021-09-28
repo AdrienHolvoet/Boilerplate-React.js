@@ -3,7 +3,6 @@ import { NavLink, Link } from "react-router-dom";
 import logo from "@images/logo.svg";
 import { useMediaQuery } from "react-responsive";
 import { useTranslation } from "react-i18next";
-import "./navigation.scss";
 
 const SideNavbar = ({ routes, refSidebar }) => {
   const { t } = useTranslation();

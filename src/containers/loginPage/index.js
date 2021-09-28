@@ -11,7 +11,6 @@ import { useTranslation } from "react-i18next";
 import { login, setUser } from "./actions";
 import { useDispatch, useSelector } from "react-redux";
 import { setShowSideNavbar } from "../app/actions";
-import "./login.scss";
 
 function Login(props) {
   const { t } = useTranslation();

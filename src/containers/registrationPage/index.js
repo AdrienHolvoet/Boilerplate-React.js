@@ -9,7 +9,6 @@ import alertify from "alertifyjs";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { setShowSideNavbar } from "../app/actions";
-import "./registration.scss";
 
 function Registration() {
   const {
